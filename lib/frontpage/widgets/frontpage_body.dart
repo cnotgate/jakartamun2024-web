@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jakartamun_web/frontpage/widgets/footer/frontpage_footer.dart';
 
 class FrontpageBody extends StatefulWidget {
   const FrontpageBody({super.key});
@@ -33,9 +34,14 @@ class _FrontpageBodyState extends State<FrontpageBody> {
       controller: scrollController,
       child: Stack(
         children: [
-          Image.asset(
-            'assets/images/background.png',
-            fit: BoxFit.contain,
+          ClipRect(
+            child: SizedBox(
+              width: double.infinity,
+              child: Image.asset(
+                'assets/images/background.png',
+                fit: BoxFit.fitWidth,
+              ),
+            ),
           ),
           const Row(
             mainAxisSize: MainAxisSize.max,
@@ -44,6 +50,10 @@ class _FrontpageBodyState extends State<FrontpageBody> {
                 children: [],
               ),
             ],
+          ),
+          const Positioned(
+            bottom: 0.0,
+            child: FrontpageFooter(),
           ),
         ],
       ),
