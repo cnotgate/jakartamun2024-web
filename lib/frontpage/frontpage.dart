@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:jakartamun_web/frontpage/widgets/frontpage_appbar.dart';
-import 'package:jakartamun_web/frontpage/widgets/frontpage_body.dart';
+import 'package:jakartamun_web/frontpage/widgets/appbar/frontpage_appbar.dart';
+import 'package:jakartamun_web/frontpage/widgets/body/frontpage_body.dart';
 
 class Frontpage extends StatefulWidget {
   const Frontpage({super.key});

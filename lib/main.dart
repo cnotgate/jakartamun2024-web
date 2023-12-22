@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
       }
 
       return MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Jakarta MUN 2024',
         theme: ThemeData(
           useMaterial3: true,
           colorScheme: lightScheme,

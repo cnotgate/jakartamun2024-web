@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 TextTheme textTheme = TextTheme(
   headlineLarge: GoogleFonts.poppins(
     fontSize: 32,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w500,
   ),
   headlineMedium: GoogleFonts.poppins(
     fontSize: 28,
