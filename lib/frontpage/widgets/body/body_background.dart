@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class BodyBackground extends StatelessWidget {
   const BodyBackground({super.key});
@@ -20,9 +21,9 @@ class BodyBackground extends StatelessWidget {
         child: SizedBox(
           width: double.infinity,
           height: MediaQuery.of(context).size.height * 4,
-          child: Image.asset(
-            'assets/images/background.png',
-            fit: BoxFit.cover,
+          child: SvgPicture.asset(
+            'assets/images/background.svg',
+            fit: BoxFit.fitWidth,
           ),
         ),
       ),
