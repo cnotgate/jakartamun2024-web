@@ -148,12 +148,18 @@ class Section1 extends StatelessWidget {
                                     OutlinedButton(
                                       onPressed: () {},
                                       style: OutlinedButton.styleFrom(
-                                        padding: const EdgeInsets.all(20.0),
+                                        padding: const EdgeInsets.all(20),
                                         side: const BorderSide(width: 2.0, color: Colors.white),
                                       ),
                                       child: Text(
                                         "Our Competition",
-                                        style: textTheme.titleMedium?.apply(color: Colors.white),
+                                        style: getValueForScreenType(
+                                          context: context,
+                                          mobile: textTheme.titleSmall?.apply(color: Colors.white),
+                                          tablet: textTheme.titleMedium?.apply(color: Colors.white),
+                                          desktop:
+                                              textTheme.titleMedium?.apply(color: Colors.white),
+                                        ),
                                       ),
                                     ),
                                     const SizedBox(height: 12.0),
@@ -167,7 +173,13 @@ class Section1 extends StatelessWidget {
                                       ),
                                       child: Text(
                                         "Register Now",
-                                        style: textTheme.titleMedium?.apply(color: Colors.white),
+                                        style: getValueForScreenType(
+                                          context: context,
+                                          mobile: textTheme.titleSmall?.apply(color: Colors.white),
+                                          tablet: textTheme.titleMedium?.apply(color: Colors.white),
+                                          desktop:
+                                              textTheme.titleMedium?.apply(color: Colors.white),
+                                        ),
                                       ),
                                     ),
                                   ],
