@@ -2,6 +2,7 @@ import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
+import 'package:jakartamun_web/adminpage/adminpage.dart';
 import 'package:jakartamun_web/frontpage/frontpage.dart';
 import 'package:jakartamun_web/theme/color_schemes.g.dart';
 import 'package:jakartamun_web/theme/custom_color.g.dart';
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
           textTheme: textTheme,
           extensions: [lightCustomColors],
         ),
-        home: const Frontpage(),
+        home: const AdminPage(),
       );
     });
   }
