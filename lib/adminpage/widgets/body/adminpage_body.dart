@@ -47,24 +47,22 @@ class _AdminPageBodyState extends State<AdminPageBody> {
               ).createShader(bounds);
             },
             blendMode: BlendMode.srcOver,
-            child: Expanded(
-              child: Container(
-                constraints: BoxConstraints(minHeight: MediaQuery.of(context).size.height),
-                child: Padding(
-                  padding: const EdgeInsets.all(120),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      const Text("Daftar Peserta"),
-                      Container(
-                        height: 50,
-                      ),
-                      const TablePage(),
-                      Container(
-                        height: 150,
-                      )
-                    ],
-                  ),
+            child: Container(
+              constraints: BoxConstraints(minHeight: MediaQuery.of(context).size.height),
+              child: Padding(
+                padding: const EdgeInsets.all(120),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    const Text("Daftar Peserta"),
+                    Container(
+                      height: 50,
+                    ),
+                    const TablePage(),
+                    Container(
+                      height: 150,
+                    )
+                  ],
                 ),
               ),
             ),
