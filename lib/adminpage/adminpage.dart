@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jakartamun_web/AdminPage/widgets/appbar/AdminPage_appbar.dart';
-// import 'package:jakartamun_web/adminpage/widgets/appbar/adminpage_appbar.dart';
 import 'package:jakartamun_web/adminpage/widgets/body/adminpage_body.dart';
 
 class AdminPage extends StatefulWidget {
@@ -14,7 +12,7 @@ class AdminPage extends StatefulWidget {
 class _AdminPageState extends State<AdminPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       // backgroundColor: Colors.black,
       body: Stack(
         children: [
@@ -38,8 +36,8 @@ class _AdminPageState extends State<AdminPage> {
           //     child: const AdminPageBody(),
           //   ),
           // ),
-          const AdminPageBody(),
-          const Positioned(
+          AdminPageBody(),
+          Positioned(
             top: 0.0,
             child: AdminPageAppbar(),
           ),

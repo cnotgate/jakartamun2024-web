@@ -18,7 +18,7 @@ class BodyBackground extends StatelessWidget {
       blendMode: BlendMode.srcOver,
       child: Container(
         height: 1000,
-        color: Color(0xaaf06e34),
+        color: const Color(0xaaf06e34),
       ),
       // child: ClipRect(
       //   child: SizedBox(
