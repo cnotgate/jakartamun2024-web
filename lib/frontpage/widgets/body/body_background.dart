@@ -8,10 +8,10 @@ class BodyBackground extends StatelessWidget {
     return ShaderMask(
       shaderCallback: (Rect bounds) {
         return const LinearGradient(
-                colors: [Color(0xaaf06e34), Color(0xaaf55789)],
-                begin: FractionalOffset.topCenter,
-                end: FractionalOffset.bottomCenter,
-                stops: [0.0, 0.5],
+                colors: [Color(0xaaf06e34), Color(0xaaf55789), Color(0xaafbb53b)],
+                begin: FractionalOffset.topLeft,
+                end: FractionalOffset.bottomRight,
+                stops: [0.0, 0.5, 1.0],
                 tileMode: TileMode.clamp)
             .createShader(bounds);
       },

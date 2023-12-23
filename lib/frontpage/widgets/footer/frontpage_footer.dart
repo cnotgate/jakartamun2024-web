@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:jakartamun_web/frontpage/widgets/footer/icon_text_button.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class FrontpageFooter extends StatelessWidget {
   const FrontpageFooter({super.key});
@@ -90,10 +91,12 @@ class FrontpageFooter extends StatelessWidget {
                   IconTextButton(
                     icon: FontAwesomeIcons.globe,
                     text: 'isafis.or.id',
-                    onPressed: () {},
+                    onPressed: () {
+                      launchUrlString("https://isafis.or.id");
+                    },
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),

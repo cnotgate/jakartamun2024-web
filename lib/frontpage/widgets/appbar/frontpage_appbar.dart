@@ -20,8 +20,8 @@ class FrontpageAppbar extends StatelessWidget {
           decoration: const BoxDecoration(
             gradient: LinearGradient(
                 colors: [Color(0x00f06e34), Color(0x00f55789)],
-                begin: FractionalOffset(0.0, 0.0),
-                end: FractionalOffset(1.0, 0.0),
+                begin: FractionalOffset.centerLeft,
+                end: FractionalOffset.centerRight,
                 stops: [0.0, 1.0],
                 tileMode: TileMode.clamp),
           ),
@@ -53,6 +53,15 @@ class FrontpageAppbar extends StatelessWidget {
                     onPressed: () {},
                     child: Text(
                       'About Us',
+                      style: Theme.of(context).textTheme.titleMedium?.apply(
+                            color: Colors.white,
+                          ),
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Press',
                       style: Theme.of(context).textTheme.titleMedium?.apply(
                             color: Colors.white,
                           ),
