@@ -48,6 +48,7 @@ class _AdminPageBodyState extends State<AdminPageBody> {
             },
             blendMode: BlendMode.srcOver,
             child: Container(
+              color: const Color(0xaaf06e34),
               constraints: BoxConstraints(minHeight: MediaQuery.of(context).size.height),
               child: Padding(
                 padding: const EdgeInsets.all(120),
