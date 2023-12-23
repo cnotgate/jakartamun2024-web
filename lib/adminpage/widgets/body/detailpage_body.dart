@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:jakartamun_web/AdminPage/widgets/footer/AdminPage_footer.dart';
 import 'package:jakartamun_web/adminpage/widgets/body/sections/tablepage.dart';
+import 'package:jakartamun_web/adminpage/widgets/footer/detailpage_footer.dart';
 
-class AdminPageBody extends StatefulWidget {
-  const AdminPageBody({super.key});
+class DetailPageBody extends StatefulWidget {
+  const DetailPageBody({super.key});
 
   @override
-  State<AdminPageBody> createState() => _AdminPageBodyState();
+  State<DetailPageBody> createState() => _DetailPageBodyState();
 }
 
-class _AdminPageBodyState extends State<AdminPageBody> {
+class _DetailPageBodyState extends State<DetailPageBody> {
   final scrollController = ScrollController();
 
   @override
@@ -39,23 +39,34 @@ class _AdminPageBodyState extends State<AdminPageBody> {
           ShaderMask(
             shaderCallback: (Rect bounds) {
               return const LinearGradient(
-                colors: [Color(0xaaf06e34), Color(0xaaf55789), Color.fromARGB(170, 242, 155, 6)],
+                colors: [
+                  Color(0xaaf06e34),
+                  Color(0xaaf55789),
+                  Color.fromARGB(170, 242, 155, 6)
+                ],
                 begin: FractionalOffset.topLeft,
                 end: FractionalOffset.bottomRight,
                 stops: [0.0, 0.5, 1.0],
                 tileMode: TileMode.clamp,
               ).createShader(bounds);
             },
-                  blendMode: BlendMode.color,
+            blendMode: BlendMode.color,
             child: Container(
               color: const Color(0xaaf06e34),
-              constraints: BoxConstraints(minHeight: MediaQuery.of(context).size.height),
+              constraints:
+                  BoxConstraints(minHeight: MediaQuery.of(context).size.height),
               child: Padding(
                 padding: const EdgeInsets.all(120),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    const Text("Daftar Peserta", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold ),),
+                    const Text(
+                      "Daftar Peserta",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold),
+                    ),
                     Container(
                       height: 50,
                     ),
@@ -70,7 +81,7 @@ class _AdminPageBodyState extends State<AdminPageBody> {
           ),
           const Positioned(
             bottom: 0.0,
-            child: AdminPageFooter(),
+            child: DetailPageFooter(),
           ),
         ],
       ),
