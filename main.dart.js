@@ -66165,7 +66165,7 @@ else A.kK("At the bottom")}},
 $S:0}
 A.IY.prototype={
 L(a){var s,r,q,p,o,n,m,l,k,j,i=null,h=A.a5(a),g=t.w,f=A.bD(a,i,g).w
-g=A.tg(a,A.bD(a,i,g).w.a.a*0.65,f.a.a*0.8,A.bD(a,i,g).w.a.a*0.75)
+g=A.tg(a,A.bD(a,i,g).w.a.a*0.75,f.a.a*0.9,A.bD(a,i,g).w.a.a*0.75)
 f=A.UM(15)
 s=A.alD(B.i)
 r=A.UM(15)
