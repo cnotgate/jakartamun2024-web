@@ -12,8 +12,8 @@ class Section1 extends StatelessWidget {
     return Container(
       width: getValueForScreenType(
         context: context,
-        mobile: MediaQuery.of(context).size.width * 0.8,
-        desktop: MediaQuery.of(context).size.width * 0.65,
+        mobile: MediaQuery.of(context).size.width * 0.9,
+        desktop: MediaQuery.of(context).size.width * 0.75,
         tablet: MediaQuery.of(context).size.width * 0.75,
       ),
       decoration: BoxDecoration(
