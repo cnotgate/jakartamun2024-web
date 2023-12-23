@@ -22,9 +22,11 @@ class IconTextButton extends StatelessWidget {
             color: Colors.white,
           ),
           const SizedBox(width: 5),
-          Text(
-            text,
-            style: Theme.of(context).textTheme.bodySmall?.apply(color: Colors.white70),
+          Flexible(
+            child: Text(
+              text,
+              style: Theme.of(context).textTheme.bodySmall?.apply(color: Colors.white70),
+            ),
           )
         ],
       ),

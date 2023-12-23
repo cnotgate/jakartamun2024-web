@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:jakartamun_web/frontpage/widgets/footer/icon_text_button.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class FrontpageFooter extends StatelessWidget {
@@ -28,77 +29,161 @@ class FrontpageFooter extends StatelessWidget {
                 tileMode: TileMode.clamp),
           ),
           padding: EdgeInsets.symmetric(vertical: statusbarHeight + 10),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              // JAKARTAMUN
-              Row(
+          child: ResponsiveBuilder(builder: (context, sizing) {
+            var sz = sizing.deviceScreenType;
+
+            if (sz == DeviceScreenType.desktop) {
+              return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  IconTextButton(
-                    icon: FontAwesomeIcons.instagram,
-                    text: '@jakartamun',
-                    onPressed: () {},
+                  // JAKARTAMUN
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      IconTextButton(
+                        icon: FontAwesomeIcons.instagram,
+                        text: '@jakartamun',
+                        onPressed: () {},
+                      ),
+                      IconTextButton(
+                        icon: FontAwesomeIcons.squareXTwitter,
+                        text: '@jakartamun',
+                        onPressed: () {},
+                      ),
+                      IconTextButton(
+                        icon: FontAwesomeIcons.facebook,
+                        text: 'Jakarta Model United Nations',
+                        onPressed: () {},
+                      ),
+                      IconTextButton(
+                        icon: FontAwesomeIcons.linkedin,
+                        text: 'Jakarta Model United Nations',
+                        onPressed: () {},
+                      ),
+                      IconTextButton(
+                        icon: FontAwesomeIcons.line,
+                        text: '@jakartamun',
+                        onPressed: () {},
+                      ),
+                    ],
                   ),
-                  IconTextButton(
-                    icon: FontAwesomeIcons.squareXTwitter,
-                    text: '@jakartamun',
-                    onPressed: () {},
-                  ),
-                  IconTextButton(
-                    icon: FontAwesomeIcons.facebook,
-                    text: 'Jakarta Model United Nations',
-                    onPressed: () {},
-                  ),
-                  IconTextButton(
-                    icon: FontAwesomeIcons.linkedin,
-                    text: 'Jakarta Model United Nations',
-                    onPressed: () {},
-                  ),
-                  IconTextButton(
-                    icon: FontAwesomeIcons.line,
-                    text: '@jakartamun',
-                    onPressed: () {},
+                  const SizedBox(height: 8),
+                  // ISAFIS
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      IconTextButton(
+                        icon: FontAwesomeIcons.instagram,
+                        text: '@isafis_official',
+                        onPressed: () {},
+                      ),
+                      IconTextButton(
+                        icon: FontAwesomeIcons.squareXTwitter,
+                        text: '@ISAFIS_OFFICIAL',
+                        onPressed: () {},
+                      ),
+                      IconTextButton(
+                        icon: FontAwesomeIcons.facebook,
+                        text: 'ISAFIS',
+                        onPressed: () {},
+                      ),
+                      IconTextButton(
+                        icon: FontAwesomeIcons.linkedin,
+                        text: 'contact@isafis.or.id',
+                        onPressed: () {},
+                      ),
+                      IconTextButton(
+                        icon: FontAwesomeIcons.globe,
+                        text: 'isafis.or.id',
+                        onPressed: () {
+                          launchUrlString("https://isafis.or.id");
+                        },
+                      ),
+                    ],
                   ),
                 ],
-              ),
-              const SizedBox(height: 8),
-              // ISAFIS
-              Row(
+              );
+            } else {
+              return Row(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  IconTextButton(
-                    icon: FontAwesomeIcons.instagram,
-                    text: '@isafis_official',
-                    onPressed: () {},
+                  // JAKARTAMUN
+                  Expanded(
+                    flex: 1,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        IconTextButton(
+                          icon: FontAwesomeIcons.instagram,
+                          text: '@jakartamun',
+                          onPressed: () {},
+                        ),
+                        IconTextButton(
+                          icon: FontAwesomeIcons.squareXTwitter,
+                          text: '@jakartamun',
+                          onPressed: () {},
+                        ),
+                        IconTextButton(
+                          icon: FontAwesomeIcons.facebook,
+                          text: 'Jakarta Model United Nations',
+                          onPressed: () {},
+                        ),
+                        IconTextButton(
+                          icon: FontAwesomeIcons.linkedin,
+                          text: 'Jakarta Model United Nations',
+                          onPressed: () {},
+                        ),
+                        IconTextButton(
+                          icon: FontAwesomeIcons.line,
+                          text: '@jakartamun',
+                          onPressed: () {},
+                        ),
+                      ],
+                    ),
                   ),
-                  IconTextButton(
-                    icon: FontAwesomeIcons.squareXTwitter,
-                    text: '@ISAFIS_OFFICIAL',
-                    onPressed: () {},
-                  ),
-                  IconTextButton(
-                    icon: FontAwesomeIcons.facebook,
-                    text: 'ISAFIS',
-                    onPressed: () {},
-                  ),
-                  IconTextButton(
-                    icon: FontAwesomeIcons.linkedin,
-                    text: 'contact@isafis.or.id',
-                    onPressed: () {},
-                  ),
-                  IconTextButton(
-                    icon: FontAwesomeIcons.globe,
-                    text: 'isafis.or.id',
-                    onPressed: () {
-                      launchUrlString("https://isafis.or.id");
-                    },
+
+                  // ISAFIS
+                  Expanded(
+                    flex: 1,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        IconTextButton(
+                          icon: FontAwesomeIcons.instagram,
+                          text: '@isafis_official',
+                          onPressed: () {},
+                        ),
+                        IconTextButton(
+                          icon: FontAwesomeIcons.squareXTwitter,
+                          text: '@ISAFIS_OFFICIAL',
+                          onPressed: () {},
+                        ),
+                        IconTextButton(
+                          icon: FontAwesomeIcons.facebook,
+                          text: 'ISAFIS',
+                          onPressed: () {},
+                        ),
+                        IconTextButton(
+                          icon: FontAwesomeIcons.linkedin,
+                          text: 'contact@isafis.or.id',
+                          onPressed: () {},
+                        ),
+                        IconTextButton(
+                          icon: FontAwesomeIcons.globe,
+                          text: 'isafis.or.id',
+                          onPressed: () {
+                            launchUrlString("https://isafis.or.id");
+                          },
+                        ),
+                      ],
+                    ),
                   ),
                 ],
-              ),
-            ],
-          ),
+              );
+            }
+          }),
         ),
       ),
     );

@@ -18,8 +18,8 @@ class BodyBackground extends StatelessWidget {
       blendMode: BlendMode.srcOver,
       child: Image.asset(
         'assets/images/background.png',
-        fit: BoxFit.fitWidth,
         height: MediaQuery.of(context).size.height * 4,
+        width: MediaQuery.of(context).size.width,
         repeat: ImageRepeat.repeatY,
       ),
     );
