@@ -45,7 +45,7 @@ class _FrontpageBodyState extends State<FrontpageBody> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                        padding: EdgeInsets.symmetric(vertical: 150),
+                        padding: EdgeInsets.symmetric(vertical: 120),
                         child: Column(
                           children: [
                             Section1(),

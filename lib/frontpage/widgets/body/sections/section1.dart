@@ -7,6 +7,7 @@ class Section1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return Container(
       width: MediaQuery.of(context).size.width * 0.65,
       decoration: BoxDecoration(
@@ -21,50 +22,76 @@ class Section1 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Padding(
-                padding: const EdgeInsets.all(32.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.3,
-                      child: Text(
+              Expanded(
+                flex: 2,
+                child: Padding(
+                  padding: const EdgeInsets.all(32.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
                         "Lorem Ipsum",
                         style: Theme.of(context).textTheme.displayLarge?.apply(color: Colors.white),
                       ),
-                    ),
-                    const SizedBox(height: 8.0),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.3,
-                      child: Text(
+                      const SizedBox(height: 8.0),
+                      Text(
                         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat lacus laoreet non curabitur gravida arcu ac.",
                         style: Theme.of(context).textTheme.bodyLarge?.apply(color: Colors.white),
                       ),
-                    ),
-                    const SizedBox(height: 32.0),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.3,
-                      child: Text(
+                      const SizedBox(height: 32.0),
+                      Text(
                         "Consectetur Adipiscing",
                         style: Theme.of(context).textTheme.displayLarge?.apply(color: Colors.white),
                       ),
-                    ),
-                    const SizedBox(height: 8.0),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.3,
-                      child: Text(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In iaculis nunc sed augue lacus viverra vitae. Auctor elit sed vulputate mi sit amet mauris commodo quis.",
-                        style: Theme.of(context).textTheme.bodyLarge?.apply(color: Colors.white),
+                      const SizedBox(height: 8.0),
+                      Text(
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In iaculis nunc sed augue lacus viverra vitae.",
+                        style: textTheme.bodyLarge?.apply(color: Colors.white),
                       ),
-                    ),
-                  ],
+                      const SizedBox(height: 32.0),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 16.0),
+                        child: Row(
+                          children: [
+                            OutlinedButton(
+                              onPressed: () {},
+                              style: OutlinedButton.styleFrom(
+                                padding: const EdgeInsets.all(20.0),
+                                side: const BorderSide(width: 2.0, color: Colors.white),
+                              ),
+                              child: Text(
+                                "Our Competition",
+                                style: textTheme.titleMedium?.apply(color: Colors.white),
+                              ),
+                            ),
+                            const SizedBox(width: 10.0),
+                            ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                padding: const EdgeInsets.all(20.0),
+                                backgroundColor: const Color(0xfff55789),
+                                side: const BorderSide(width: 2.0, color: Color(0xfff55789)),
+                              ),
+                              child: Text(
+                                "Register Now",
+                                style: textTheme.titleMedium?.apply(color: Colors.white),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(right: 16.0),
-                child: Image.asset(
-                  'assets/images/monas.png',
-                  width: MediaQuery.of(context).size.width * 0.25,
+              Expanded(
+                flex: 1,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 8.0),
+                  child: Image.asset(
+                    'assets/images/monas.png',
+                    width: 300,
+                  ),
                 ),
               ),
             ],
