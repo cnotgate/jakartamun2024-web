@@ -13,6 +13,12 @@ class Section1 extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15.0),
         border: Border.all(color: Colors.white),
+        gradient: const LinearGradient(
+            colors: [Color(0x44fbb53b), Color(0x44f55789)],
+            begin: FractionalOffset.centerLeft,
+            end: FractionalOffset.centerRight,
+            stops: [0.3, 1.0],
+            tileMode: TileMode.clamp),
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(15.0),
