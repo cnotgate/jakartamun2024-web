@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jakartamun_web/frontpage/widgets/body/body_background.dart';
+import 'package:jakartamun_web/_global_widgets/body_background.dart';
 import 'package:jakartamun_web/frontpage/widgets/body/sections/section1.dart';
-import 'package:jakartamun_web/frontpage/widgets/footer/frontpage_footer.dart';
+import 'package:jakartamun_web/_global_widgets/frontpage_footer.dart';
 
 class FrontpageBody extends StatefulWidget {
   const FrontpageBody({super.key});

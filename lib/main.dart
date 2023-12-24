@@ -2,7 +2,9 @@ import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
+import 'package:jakartamun_web/about_us/about_us.dart';
 import 'package:jakartamun_web/frontpage/frontpage.dart';
+import 'package:jakartamun_web/registration/registration.dart';
 import 'package:jakartamun_web/theme/color_schemes.g.dart';
 import 'package:jakartamun_web/theme/custom_color.g.dart';
 import 'package:jakartamun_web/theme/text_theme.dart';
@@ -55,7 +57,12 @@ class MyApp extends StatelessWidget {
           textTheme: textTheme,
           extensions: [lightCustomColors],
         ),
-        home: const Frontpage(),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => const Frontpage(),
+          '/about-us': (context) => const AboutUs(),
+          '/registration': (context) => const Registration(),
+        },
       );
     });
   }

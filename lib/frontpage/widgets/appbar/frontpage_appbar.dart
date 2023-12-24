@@ -79,7 +79,9 @@ class _FrontpageAppbarState extends State<FrontpageAppbar> {
                       return Row(
                         children: [
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/about-us');
+                            },
                             child: Text(
                               'About Us',
                               style: Theme.of(context).textTheme.titleMedium?.apply(
