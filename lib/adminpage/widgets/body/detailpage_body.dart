@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:jakartamun_web/adminpage/widgets/body/sections/tablepage.dart';
+import 'package:jakartamun_web/adminpage/widgets/body/sections/sectiondetail_page.dart';
 import 'package:jakartamun_web/adminpage/widgets/footer/detailpage_footer.dart';
 
 class DetailPageBody extends StatefulWidget {
-  const DetailPageBody({super.key});
+  String id;
+  DetailPageBody({super.key, required this.id});
 
   @override
   State<DetailPageBody> createState() => _DetailPageBodyState();
@@ -56,12 +57,15 @@ class _DetailPageBodyState extends State<DetailPageBody> {
               constraints:
                   BoxConstraints(minHeight: MediaQuery.of(context).size.height),
               child: Padding(
-                padding: const EdgeInsets.all(120),
+                padding: const EdgeInsets.all(10),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
+                    Container(
+                      height: 100,
+                    ),
                     const Text(
-                      "Daftar Peserta",
+                      "Detail Peserta",
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 30,
@@ -70,7 +74,7 @@ class _DetailPageBodyState extends State<DetailPageBody> {
                     Container(
                       height: 50,
                     ),
-                    const TablePage(),
+                    SectionDetailPage(id: widget.id),
                     Container(
                       height: 50,
                     )

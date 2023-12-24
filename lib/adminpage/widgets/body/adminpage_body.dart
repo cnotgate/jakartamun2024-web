@@ -51,17 +51,20 @@ class _AdminPageBodyState extends State<AdminPageBody> {
               color: const Color(0xaaf06e34),
               constraints: BoxConstraints(minHeight: MediaQuery.of(context).size.height),
               child: Padding(
-                padding: const EdgeInsets.all(120),
+                padding: const EdgeInsets.all(10),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
+                    Container(
+                      height: 100,
+                    ),
                     const Text("Daftar Peserta", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold ),),
                     Container(
                       height: 50,
                     ),
                     const TablePage(),
                     Container(
-                      height: 50,
+                      height: 120,
                     )
                   ],
                 ),

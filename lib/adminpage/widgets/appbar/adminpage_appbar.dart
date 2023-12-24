@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:jakartamun_web/adminpage/adminpage.dart';
 
 class AdminPageAppbar extends StatelessWidget {
   const AdminPageAppbar({super.key});
@@ -16,7 +17,8 @@ class AdminPageAppbar extends StatelessWidget {
           margin: EdgeInsets.zero,
           width: screenWidth,
           alignment: Alignment.centerLeft,
-          padding: EdgeInsets.symmetric(vertical: statusbarHeight, horizontal: 20),
+          padding:
+              EdgeInsets.symmetric(vertical: statusbarHeight, horizontal: 20),
           decoration: const BoxDecoration(
             gradient: LinearGradient(
                 colors: [Color(0x00f06e34), Color(0x00f55789)],
@@ -42,7 +44,9 @@ class AdminPageAppbar extends StatelessWidget {
                     onPressed: () {},
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: SvgPicture.asset('assets/images/jmun2024-title.svg', height: 50),
+                      child: SvgPicture.asset(
+                          'assets/images/jmun2024-title.svg',
+                          height: 50),
                     ),
                   ),
                 ],
@@ -50,40 +54,39 @@ class AdminPageAppbar extends StatelessWidget {
               Row(
                 children: [
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const AdminPage(),
+                        ),
+                      );
+                    },
                     child: Text(
-                      'About Us',
+                      'Daftar Peserta',
                       style: Theme.of(context).textTheme.titleMedium?.apply(
                             color: Colors.white,
                           ),
                     ),
                   ),
+
                   TextButton(
                     onPressed: () {},
-                    child: Text(
-                      'Press',
-                      style: Theme.of(context).textTheme.titleMedium?.apply(
-                            color: Colors.white,
+                    child:  Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8.0, vertical: 4.0),
+                          decoration: BoxDecoration(
+                            color:Colors.redAccent,
+                            borderRadius: BorderRadius.circular(10.0),
                           ),
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Competition',
-                      style: Theme.of(context).textTheme.titleMedium?.apply(
-                            color: Colors.white,
+                          child: const Text(
+                            'Logout',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Registration',
-                      style: Theme.of(context).textTheme.titleMedium?.apply(
-                            color: Colors.white,
-                          ),
-                    ),
+                        ),
                   ),
                 ],
               )
