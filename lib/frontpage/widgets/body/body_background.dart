@@ -17,15 +17,11 @@ class BodyBackground extends StatelessWidget {
             .createShader(bounds);
       },
       blendMode: BlendMode.srcOver,
-      child: ClipRect(
-        child: SizedBox(
-          width: double.infinity,
-          height: MediaQuery.of(context).size.height * 4,
-          child: SvgPicture.asset(
-            'assets/images/background.svg',
-            fit: BoxFit.fitWidth,
-          ),
-        ),
+      child: Image.asset(
+        'assets/images/background.png',
+        height: MediaQuery.of(context).size.height * 4,
+        width: MediaQuery.of(context).size.width,
+        repeat: ImageRepeat.repeatY,
       ),
     );
   }

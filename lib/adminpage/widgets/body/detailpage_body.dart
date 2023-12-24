@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jakartamun_web/adminpage/widgets/body/sections/sectiondetail_page.dart';
-import 'package:jakartamun_web/adminpage/widgets/footer/detailpage_footer.dart';
+import 'package:jakartamun_web/frontpage/widgets/footer/frontpage_footer.dart';
 
 class DetailPageBody extends StatefulWidget {
   String id;
@@ -62,7 +62,7 @@ class _DetailPageBodyState extends State<DetailPageBody> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Container(
-                      height: 100,
+                      height: 150,
                     ),
                     const Text(
                       "Detail Peserta",
@@ -76,7 +76,7 @@ class _DetailPageBodyState extends State<DetailPageBody> {
                     ),
                     SectionDetailPage(id: widget.id),
                     Container(
-                      height: 50,
+                      height: 300,
                     )
                   ],
                 ),
@@ -85,7 +85,7 @@ class _DetailPageBodyState extends State<DetailPageBody> {
           ),
           const Positioned(
             bottom: 0.0,
-            child: DetailPageFooter(),
+            child: FrontpageFooter(),
           ),
         ],
       ),

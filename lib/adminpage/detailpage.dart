@@ -16,7 +16,6 @@ class _DetailPageState extends State<DetailPage> {
     return Scaffold(
       body: Stack(
         children: [
-
           DetailPageBody(id: widget.id,),
           const Positioned(
             top: 0.0,

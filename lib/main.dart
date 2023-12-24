@@ -7,12 +7,15 @@ import 'package:jakartamun_web/frontpage/frontpage.dart';
 import 'package:jakartamun_web/theme/color_schemes.g.dart';
 import 'package:jakartamun_web/theme/custom_color.g.dart';
 import 'package:jakartamun_web/theme/text_theme.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 void main() {
   // we should specify the URL strategy to use "normal" browser pathing system
   // instead of # (hash) based system .
   usePathUrlStrategy();
-
+  ResponsiveSizingConfig.instance.setCustomBreakpoints(
+    const ScreenBreakpoints(desktop: 1080, tablet: 700, watch: 200),
+  );
   // To install Riverpod, we need to add this widget above everything else.
   // This should not be inside "MyApp" but as direct parameter to "runApp"
   runApp(

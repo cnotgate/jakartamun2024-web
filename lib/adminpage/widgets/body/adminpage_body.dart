@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jakartamun_web/AdminPage/widgets/footer/AdminPage_footer.dart';
 import 'package:jakartamun_web/adminpage/widgets/body/sections/tablepage.dart';
+import 'package:jakartamun_web/frontpage/widgets/footer/frontpage_footer.dart';
 
 class AdminPageBody extends StatefulWidget {
   const AdminPageBody({super.key});
@@ -56,7 +56,7 @@ class _AdminPageBodyState extends State<AdminPageBody> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Container(
-                      height: 100,
+                      height: 150,
                     ),
                     const Text("Daftar Peserta", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold ),),
                     Container(
@@ -64,7 +64,7 @@ class _AdminPageBodyState extends State<AdminPageBody> {
                     ),
                     const TablePage(),
                     Container(
-                      height: 120,
+                      height: 300,
                     )
                   ],
                 ),
@@ -73,7 +73,7 @@ class _AdminPageBodyState extends State<AdminPageBody> {
           ),
           const Positioned(
             bottom: 0.0,
-            child: AdminPageFooter(),
+            child: FrontpageFooter(),
           ),
         ],
       ),

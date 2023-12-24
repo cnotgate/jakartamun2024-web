@@ -16,18 +16,6 @@ class _FrontpageBodyState extends State<FrontpageBody> {
   @override
   void initState() {
     super.initState();
-
-    // Setup the listener.
-    scrollController.addListener(() {
-      if (scrollController.position.atEdge) {
-        bool isTop = scrollController.position.pixels == 0;
-        if (isTop) {
-          print('At the top');
-        } else {
-          print('At the bottom');
-        }
-      }
-    });
   }
 
   @override
@@ -37,6 +25,7 @@ class _FrontpageBodyState extends State<FrontpageBody> {
       children: [
         SingleChildScrollView(
             controller: scrollController,
+            scrollDirection: Axis.vertical,
             child: const Stack(children: [
               BodyBackground(),
               Row(
