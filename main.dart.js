@@ -66717,8 +66717,8 @@ A.Ns.prototype={
 H(a){var s,r,q,p,o=null,n=t.w,m=A.bh(a,o,n).w.r.b+12
 n=A.bh(a,o,n).w
 s=$.a8().z_(10,10,B.aL)
-r=A.fA(A.iQ("assets/images/jmun-logo.png",o,A.eI(a,75,55,65),!0,B.aq,o),new A.aca(a),o)
-q=A.eI(a,50,35,45)
+r=A.fA(A.iQ("assets/images/jmun-logo.png",o,A.eI(a,75,45,60),!0,B.aq,o),new A.aca(a),o)
+q=A.eI(a,50,30,45)
 p=t.p
 return A.aiZ(A.aiR(A.iE(B.c1,A.dg(A.a([A.d8(A.a([A.d8(A.a([r,A.fA(new A.bS(B.cd,new A.K6(q,new A.yE("assets/images/jmun2024-title.svg",o,o,o,o),o,o),o),new A.acb(a),o)],p),B.v,B.x,B.t),A.nU(new A.acc(this))],p),B.v,B.qj,B.t),new A.eM(new A.acd(this),o)],p),B.v,B.x,B.t),B.w,o,B.yv,o,B.aF,new A.aD(20,m,20,m),n.a.a),s),B.a0)}}
 A.aca.prototype={
