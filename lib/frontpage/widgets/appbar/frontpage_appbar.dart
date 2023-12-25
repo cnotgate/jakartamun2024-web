@@ -43,7 +43,9 @@ class _FrontpageAppbarState extends State<FrontpageAppbar> {
                   Row(
                     children: [
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacementNamed(context, '/');
+                        },
                         child: Image.asset(
                           'assets/images/jmun-logo.png',
                           isAntiAlias: true,
@@ -56,7 +58,9 @@ class _FrontpageAppbarState extends State<FrontpageAppbar> {
                         ),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacementNamed(context, '/');
+                        },
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: SvgPicture.asset(
@@ -79,7 +83,9 @@ class _FrontpageAppbarState extends State<FrontpageAppbar> {
                       return Row(
                         children: [
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/about-us');
+                            },
                             child: Text(
                               'About Us',
                               style: Theme.of(context).textTheme.titleMedium?.apply(
