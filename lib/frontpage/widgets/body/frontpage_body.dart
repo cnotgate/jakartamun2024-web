@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jakartamun_web/_global_widgets/body_background.dart';
 import 'package:jakartamun_web/frontpage/widgets/body/sections/section1.dart';
 import 'package:jakartamun_web/_global_widgets/footer.dart';
+import 'package:jakartamun_web/frontpage/widgets/body/sections/section2.dart';
 
 class FrontpageBody extends StatefulWidget {
   const FrontpageBody({super.key});
@@ -38,6 +39,10 @@ class _FrontpageBodyState extends State<FrontpageBody> {
                         child: Column(
                           children: [
                             Section1(),
+                            SizedBox(
+                              height: 96.0,
+                            ),
+                            Section2(),
                           ],
                         ))
                   ]),
