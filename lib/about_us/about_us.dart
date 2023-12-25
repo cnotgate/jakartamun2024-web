@@ -8,11 +8,11 @@ class AboutUs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Stack(
         children: [
           AboutUsBody(),
-          Positioned(
+          const Positioned(
             top: 0.0,
             child: FrontpageAppbar(),
           ),
