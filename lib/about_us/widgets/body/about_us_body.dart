@@ -9,35 +9,37 @@ class AboutUsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        SingleChildScrollView(
-          controller: scrollController,
-          scrollDirection: Axis.vertical,
-          child: const Stack(
-            children: [
-              BodyBackground(),
-              Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                        padding: EdgeInsets.symmetric(vertical: 120),
-                        child: Column(
-                          children: [
-                            AboutUsSection1(),
-                          ],
-                        ))
-                  ]),
-              Positioned(
-                bottom: 0.0,
-                child: FrontpageFooter(),
-              ),
-            ],
+    return SelectionArea(
+      child: Stack(
+        children: [
+          SingleChildScrollView(
+            controller: scrollController,
+            scrollDirection: Axis.vertical,
+            child: const Stack(
+              children: [
+                BodyBackground(),
+                Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                          padding: EdgeInsets.symmetric(vertical: 120),
+                          child: Column(
+                            children: [
+                              AboutUsSection1(),
+                            ],
+                          ))
+                    ]),
+                Positioned(
+                  bottom: 0.0,
+                  child: FrontpageFooter(),
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

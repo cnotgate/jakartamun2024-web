@@ -28,13 +28,13 @@ class _FrontpageAppbarState extends State<FrontpageAppbar> {
             horizontal: 20,
           ),
           decoration: const BoxDecoration(
-            color: Color(0x99dc7030),
-            //   gradient: LinearGradient(
-            //       colors: [Color(0x99f06e34), Color(0x99E23F7E)],
-            //       begin: FractionalOffset.centerLeft,
-            //       end: FractionalOffset.centerRight,
-            //       stops: [0.4, 1.0],
-            //       tileMode: TileMode.clamp),
+            // color: Color(0x99dc7030),
+            gradient: LinearGradient(
+                colors: [Color(0xccdc7030), Color(0xccFFBC5D), Color(0xccdc7030)],
+                begin: FractionalOffset.centerLeft,
+                end: FractionalOffset.centerRight,
+                stops: [0.2, 0.5, 0.8],
+                tileMode: TileMode.clamp),
           ),
           child: Column(
             children: [
