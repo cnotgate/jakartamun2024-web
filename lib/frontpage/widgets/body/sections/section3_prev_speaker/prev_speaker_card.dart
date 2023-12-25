@@ -34,7 +34,7 @@ class _PrevSpeakerCardState extends State<PrevSpeakerCard> {
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(15.0),

@@ -16,26 +16,31 @@ class Section1 extends StatelessWidget {
         context: context,
         mobile: MediaQuery.of(context).size.width * 0.9,
         tablet: MediaQuery.of(context).size.width * 0.85,
-        desktop: MediaQuery.of(context).size.width * 0.75,
+        desktop: MediaQuery.of(context).size.width * 0.9,
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15.0),
         border: Border.all(color: displayColor),
-        gradient: const LinearGradient(
-            colors: [Color(0xddf3f5d8), Color(0xbbdc7030)],
+        gradient: LinearGradient(
+            colors: const [Color(0xfff3f5d8), Color(0xffdc7030)],
             begin: FractionalOffset.topLeft,
             end: FractionalOffset.bottomRight,
-            stops: [0.6, 1.0],
+            stops: getValueForScreenType(
+              context: context,
+              mobile: [0.6, 1.0],
+              tablet: [0.6, 1.0],
+              desktop: [0.3, 0.7],
+            ),
             tileMode: TileMode.clamp),
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(15.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              flex: 2,
+              flex: 3,
               child: Padding(
                 padding: const EdgeInsets.all(32.0),
                 child: Column(
@@ -64,27 +69,128 @@ class Section1 extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 32.0),
-                    Text(
-                      "JMUN Over the Years",
-                      style: getValueForScreenType(
-                        context: context,
-                        mobile:
-                            Theme.of(context).textTheme.displaySmall?.apply(color: displayColor),
-                        tablet:
-                            Theme.of(context).textTheme.displayMedium?.apply(color: displayColor),
-                        desktop:
-                            Theme.of(context).textTheme.displayLarge?.apply(color: displayColor),
-                      ),
-                    ),
-                    const SizedBox(height: 8.0),
-                    Text(
-                      "Years after it was first held. now Jakarta MUN has become one of the most prestigious events in the international MUN community, drawing over 400 delegates last year. Jakarta MUN participants do not only hail from major cities in Indonesia, but also from various countries like USA, UK, India, New Zealand, Australia, Malaysia, Singapore and many more.",
-                      style: getValueForScreenType(
-                        context: context,
-                        mobile: Theme.of(context).textTheme.bodyMedium?.apply(color: displayColor),
-                        tablet: Theme.of(context).textTheme.bodyMedium?.apply(color: displayColor),
-                        desktop: Theme.of(context).textTheme.bodyLarge?.apply(color: displayColor),
-                      ),
+                    ResponsiveBuilder(
+                      builder: (context, sizing) {
+                        var sz = sizing.deviceScreenType;
+                        if (sz != DeviceScreenType.desktop) {
+                          return Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "JMUN Over the Years",
+                                style: getValueForScreenType(
+                                  context: context,
+                                  mobile: Theme.of(context)
+                                      .textTheme
+                                      .displaySmall
+                                      ?.apply(color: displayColor),
+                                  tablet: Theme.of(context)
+                                      .textTheme
+                                      .displayMedium
+                                      ?.apply(color: displayColor),
+                                  desktop: Theme.of(context)
+                                      .textTheme
+                                      .displayMedium
+                                      ?.apply(color: const Color(0xfff3f5d8)),
+                                ),
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "400+",
+                                        style: getValueForScreenType(
+                                          context: context,
+                                          mobile: Theme.of(context)
+                                              .textTheme
+                                              .displaySmall
+                                              ?.apply(color: displayColor),
+                                          tablet: Theme.of(context)
+                                              .textTheme
+                                              .displayMedium
+                                              ?.apply(color: displayColor),
+                                          desktop: Theme.of(context)
+                                              .textTheme
+                                              .displayLarge
+                                              ?.apply(color: const Color(0xfff3f5d8)),
+                                        ),
+                                      ),
+                                      Text(
+                                        "registrants",
+                                        style: getValueForScreenType(
+                                          context: context,
+                                          mobile: Theme.of(context)
+                                              .textTheme
+                                              .titleSmall
+                                              ?.apply(color: displayColor),
+                                          tablet: Theme.of(context)
+                                              .textTheme
+                                              .titleMedium
+                                              ?.apply(color: displayColor),
+                                          desktop: Theme.of(context)
+                                              .textTheme
+                                              .titleMedium
+                                              ?.apply(color: const Color(0xfff3f5d8)),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(width: 16.0),
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "18",
+                                        style: getValueForScreenType(
+                                          context: context,
+                                          mobile: Theme.of(context)
+                                              .textTheme
+                                              .displaySmall
+                                              ?.apply(color: displayColor),
+                                          tablet: Theme.of(context)
+                                              .textTheme
+                                              .displayMedium
+                                              ?.apply(color: displayColor),
+                                          desktop: Theme.of(context)
+                                              .textTheme
+                                              .displayLarge
+                                              ?.apply(color: const Color(0xfff3f5d8)),
+                                        ),
+                                      ),
+                                      Text(
+                                        "countries",
+                                        style: getValueForScreenType(
+                                          context: context,
+                                          mobile: Theme.of(context)
+                                              .textTheme
+                                              .titleSmall
+                                              ?.apply(color: displayColor),
+                                          tablet: Theme.of(context)
+                                              .textTheme
+                                              .titleMedium
+                                              ?.apply(color: displayColor),
+                                          desktop: Theme.of(context)
+                                              .textTheme
+                                              .titleMedium
+                                              ?.apply(color: const Color(0xfff3f5d8)),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ],
+                          );
+                        } else {
+                          return Container();
+                        }
+                      },
                     ),
                     const SizedBox(height: 32.0),
                     Padding(
@@ -152,22 +258,162 @@ class Section1 extends StatelessWidget {
                 ),
               ),
             ),
-            ResponsiveBuilder(
-              builder: (context, size) {
-                var sz = size.deviceScreenType;
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ResponsiveBuilder(
+                  builder: (context, size) {
+                    var sz = size.deviceScreenType;
 
-                if (sz == DeviceScreenType.desktop) {
-                  return Padding(
-                    padding: const EdgeInsets.only(right: 8.0),
-                    child: Image.asset(
-                      'assets/images/monas.png',
-                      width: 300,
-                    ),
-                  );
-                } else {
-                  return Container();
-                }
-              },
+                    if (sz == DeviceScreenType.desktop) {
+                      return Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: Image.asset(
+                          'assets/images/monas.png',
+                          width: 340,
+                        ),
+                      );
+                    } else {
+                      return Container();
+                    }
+                  },
+                ),
+              ],
+            ),
+            Expanded(
+              flex: getValueForScreenType(
+                context: context,
+                mobile: 0,
+                tablet: 0,
+                desktop: 2,
+              ),
+              child: ResponsiveBuilder(
+                builder: (context, sizing) {
+                  var sz = sizing.deviceScreenType;
+                  if (sz == DeviceScreenType.desktop) {
+                    return Padding(
+                      padding: const EdgeInsets.all(32.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "JMUN Over the Years",
+                            style: getValueForScreenType(
+                              context: context,
+                              mobile: Theme.of(context)
+                                  .textTheme
+                                  .displaySmall
+                                  ?.apply(color: displayColor),
+                              tablet: Theme.of(context)
+                                  .textTheme
+                                  .displayMedium
+                                  ?.apply(color: displayColor),
+                              desktop: Theme.of(context)
+                                  .textTheme
+                                  .displayMedium
+                                  ?.apply(color: const Color(0xfff3f5d8)),
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "400+",
+                                    style: getValueForScreenType(
+                                      context: context,
+                                      mobile: Theme.of(context)
+                                          .textTheme
+                                          .displaySmall
+                                          ?.apply(color: displayColor),
+                                      tablet: Theme.of(context)
+                                          .textTheme
+                                          .displayMedium
+                                          ?.apply(color: displayColor),
+                                      desktop: Theme.of(context)
+                                          .textTheme
+                                          .displayLarge
+                                          ?.apply(color: const Color(0xfff3f5d8)),
+                                    ),
+                                  ),
+                                  Text(
+                                    "registrants",
+                                    style: getValueForScreenType(
+                                      context: context,
+                                      mobile: Theme.of(context)
+                                          .textTheme
+                                          .titleSmall
+                                          ?.apply(color: displayColor),
+                                      tablet: Theme.of(context)
+                                          .textTheme
+                                          .titleMedium
+                                          ?.apply(color: displayColor),
+                                      desktop: Theme.of(context)
+                                          .textTheme
+                                          .titleMedium
+                                          ?.apply(color: const Color(0xfff3f5d8)),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(width: 16.0),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "18",
+                                    style: getValueForScreenType(
+                                      context: context,
+                                      mobile: Theme.of(context)
+                                          .textTheme
+                                          .displaySmall
+                                          ?.apply(color: displayColor),
+                                      tablet: Theme.of(context)
+                                          .textTheme
+                                          .displayMedium
+                                          ?.apply(color: displayColor),
+                                      desktop: Theme.of(context)
+                                          .textTheme
+                                          .displayLarge
+                                          ?.apply(color: const Color(0xfff3f5d8)),
+                                    ),
+                                  ),
+                                  Text(
+                                    "countries",
+                                    style: getValueForScreenType(
+                                      context: context,
+                                      mobile: Theme.of(context)
+                                          .textTheme
+                                          .titleSmall
+                                          ?.apply(color: displayColor),
+                                      tablet: Theme.of(context)
+                                          .textTheme
+                                          .titleMedium
+                                          ?.apply(color: displayColor),
+                                      desktop: Theme.of(context)
+                                          .textTheme
+                                          .titleMedium
+                                          ?.apply(color: const Color(0xfff3f5d8)),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    );
+                  } else {
+                    return Container();
+                  }
+                },
+              ),
             ),
           ],
         ),
