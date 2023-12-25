@@ -37,22 +37,22 @@ class _DetailPageBodyState extends State<DetailPageBody> {
       controller: scrollController,
       child: Stack(
         children: [
-          ShaderMask(
-            shaderCallback: (Rect bounds) {
-              return const LinearGradient(
-                colors: [
-                  Color(0xaaf06e34),
-                  Color(0xaaf55789),
-                  Color.fromARGB(170, 242, 155, 6)
-                ],
-                begin: FractionalOffset.topLeft,
-                end: FractionalOffset.bottomRight,
-                stops: [0.0, 0.5, 1.0],
-                tileMode: TileMode.clamp,
-              ).createShader(bounds);
-            },
-            blendMode: BlendMode.color,
-            child: Container(
+          // ShaderMask(
+          //   shaderCallback: (Rect bounds) {
+          //     return const LinearGradient(
+          //       colors: [
+          //         Color(0xaaf06e34),
+          //         Color(0xaaf55789),
+          //         Color.fromARGB(170, 242, 155, 6)
+          //       ],
+          //       begin: FractionalOffset.topLeft,
+          //       end: FractionalOffset.bottomRight,
+          //       stops: [0.0, 0.5, 1.0],
+          //       tileMode: TileMode.clamp,
+          //     ).createShader(bounds);
+          //   },
+          //   blendMode: BlendMode.color,
+            Container(
               color: const Color(0xaaf06e34),
               constraints:
                   BoxConstraints(minHeight: MediaQuery.of(context).size.height),
@@ -82,7 +82,7 @@ class _DetailPageBodyState extends State<DetailPageBody> {
                 ),
               ),
             ),
-          ),
+          // ),
           const Positioned(
             bottom: 0.0,
             child: FrontpageFooter(),

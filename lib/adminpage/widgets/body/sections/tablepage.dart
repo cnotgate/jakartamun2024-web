@@ -164,6 +164,147 @@ class _TableState extends State<TablePage> {
     'email': 'Isabel@gmail.com',
     'payment': "not approved"
   },
+{
+    'id': '1',
+    'delegation': 'Universitas A',
+    'fullname': 'John Doe',
+    'email': 'John@gmail.com',
+    'payment': "approved"
+  },
+  {
+    'id': '2',
+    'delegation': 'Universitas B',
+    'fullname': 'Jane Doe',
+    'email': 'Jane@gmail.com',
+    'payment': "not approved"
+  },
+  {
+    'id': '3',
+    'delegation': 'Universitas C',
+    'fullname': 'Alice Smith',
+    'email': 'Alice@gmail.com',
+    'payment': "approved"
+  },
+  {
+    'id': '4',
+    'delegation': 'Universitas D',
+    'fullname': 'Bob Johnson',
+    'email': 'Bob@gmail.com',
+    'payment': "not approved"
+  },
+  {
+    'id': '5',
+    'delegation': 'Universitas E',
+    'fullname': 'Eva Brown',
+    'email': 'Eva@gmail.com',
+    'payment': "approved"
+  },
+  {
+    'id': '6',
+    'delegation': 'Universitas F',
+    'fullname': 'Charlie White',
+    'email': 'Charlie@gmail.com',
+    'payment': "not approved"
+  },
+  {
+    'id': '7',
+    'delegation': 'Universitas G',
+    'fullname': 'David Black',
+    'email': 'David@gmail.com',
+    'payment': "approved"
+  },
+  {
+    'id': '8',
+    'delegation': 'Universitas H',
+    'fullname': 'Grace Miller',
+    'email': 'Grace@gmail.com',
+    'payment': "not approved"
+  },
+  {
+    'id': '9',
+    'delegation': 'Universitas I',
+    'fullname': 'Henry Davis',
+    'email': 'Henry@gmail.com',
+    'payment': "approved"
+  },
+  {
+    'id': '10',
+    'delegation': 'Universitas J',
+    'fullname': 'Isabel Wilson',
+    'email': 'Isabel@gmail.com',
+    'payment': "not approved"
+  },
+
+ {
+    'id': '1',
+    'delegation': 'Universitas A',
+    'fullname': 'John Doe',
+    'email': 'John@gmail.com',
+    'payment': "approved"
+  },
+  {
+    'id': '2',
+    'delegation': 'Universitas B',
+    'fullname': 'Jane Doe',
+    'email': 'Jane@gmail.com',
+    'payment': "not approved"
+  },
+  {
+    'id': '3',
+    'delegation': 'Universitas C',
+    'fullname': 'Alice Smith',
+    'email': 'Alice@gmail.com',
+    'payment': "approved"
+  },
+  {
+    'id': '4',
+    'delegation': 'Universitas D',
+    'fullname': 'Bob Johnson',
+    'email': 'Bob@gmail.com',
+    'payment': "not approved"
+  },
+  {
+    'id': '5',
+    'delegation': 'Universitas E',
+    'fullname': 'Eva Brown',
+    'email': 'Eva@gmail.com',
+    'payment': "approved"
+  },
+  {
+    'id': '6',
+    'delegation': 'Universitas F',
+    'fullname': 'Charlie White',
+    'email': 'Charlie@gmail.com',
+    'payment': "not approved"
+  },
+  {
+    'id': '7',
+    'delegation': 'Universitas G',
+    'fullname': 'David Black',
+    'email': 'David@gmail.com',
+    'payment': "approved"
+  },
+  {
+    'id': '8',
+    'delegation': 'Universitas H',
+    'fullname': 'Grace Miller',
+    'email': 'Grace@gmail.com',
+    'payment': "not approved"
+  },
+  {
+    'id': '9',
+    'delegation': 'Universitas I',
+    'fullname': 'Henry Davis',
+    'email': 'Henry@gmail.com',
+    'payment': "approved"
+  },
+  {
+    'id': '10',
+    'delegation': 'Universitas J',
+    'fullname': 'Isabel Wilson',
+    'email': 'Isabel@gmail.com',
+    'payment': "not approved"
+  },
       // Add more data as needed
     ];
   }

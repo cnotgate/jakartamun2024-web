@@ -164,7 +164,7 @@ class _SectionDetailPageState extends State<SectionDetailPage> {
       "special_medical_condition": "None",
       "accom_status": "Non-Accommodated",
       "proof_of_transfer":
-          "https://images.tokopedia.net/img/cache/900/VqbcmM/2023/2/17/4fe55a5c-67c3-408f-bb11-9714a0d9592d.png"
+          "https://miro.medium.com/v2/resize:fit:828/format:webp/0*YvMogQLKcU-kHv6v"
     };
   }
 }
