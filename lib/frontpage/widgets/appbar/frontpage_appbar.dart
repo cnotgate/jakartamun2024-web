@@ -28,12 +28,13 @@ class _FrontpageAppbarState extends State<FrontpageAppbar> {
             horizontal: 20,
           ),
           decoration: const BoxDecoration(
-            gradient: LinearGradient(
-                colors: [Color(0x00f06e34), Color(0x00f55789)],
-                begin: FractionalOffset.centerLeft,
-                end: FractionalOffset.centerRight,
-                stops: [0.0, 1.0],
-                tileMode: TileMode.clamp),
+            color: Color(0x99dc7030),
+            //   gradient: LinearGradient(
+            //       colors: [Color(0x99f06e34), Color(0x99E23F7E)],
+            //       begin: FractionalOffset.centerLeft,
+            //       end: FractionalOffset.centerRight,
+            //       stops: [0.4, 1.0],
+            //       tileMode: TileMode.clamp),
           ),
           child: Column(
             children: [
@@ -51,7 +52,7 @@ class _FrontpageAppbarState extends State<FrontpageAppbar> {
                           isAntiAlias: true,
                           height: getValueForScreenType(
                             context: context,
-                            mobile: 60,
+                            mobile: 55,
                             tablet: 65,
                             desktop: 75,
                           ),
@@ -67,7 +68,7 @@ class _FrontpageAppbarState extends State<FrontpageAppbar> {
                             'assets/images/jmun2024-title.svg',
                             height: getValueForScreenType(
                               context: context,
-                              mobile: 40,
+                              mobile: 35,
                               tablet: 45,
                               desktop: 50,
                             ),
@@ -96,7 +97,7 @@ class _FrontpageAppbarState extends State<FrontpageAppbar> {
                           TextButton(
                             onPressed: () {},
                             child: Text(
-                              'Competition',
+                              'Councils',
                               style: Theme.of(context).textTheme.titleMedium?.apply(
                                     color: Colors.white,
                                   ),
