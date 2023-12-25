@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:jakartamun_web/about_us/about_us.dart';
 import 'package:jakartamun_web/frontpage/frontpage.dart';
+import 'package:jakartamun_web/presspage/presspage.dart';
 import 'package:jakartamun_web/registration/registration.dart';
 import 'package:jakartamun_web/theme/color_schemes.g.dart';
 import 'package:jakartamun_web/theme/custom_color.g.dart';
@@ -62,6 +63,8 @@ class MyApp extends StatelessWidget {
           '/': (context) => const Frontpage(),
           '/about-us': (context) => const AboutUs(),
           '/registration': (context) => const Registration(),
+          '/press': (context) => const PressPage(),
+
         },
       );
     });
