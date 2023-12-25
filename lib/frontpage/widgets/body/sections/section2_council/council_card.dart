@@ -46,7 +46,7 @@ class _CouncilCardState extends State<CouncilCard> {
             width: MediaQuery.of(context).size.width *
                 getValueForScreenType(
                   context: context,
-                  mobile: 0.35,
+                  mobile: 0.45,
                   tablet: 0.17,
                   desktop: 0.13,
                 ),

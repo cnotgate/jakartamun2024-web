@@ -52,8 +52,8 @@ class _FrontpageAppbarState extends State<FrontpageAppbar> {
                           isAntiAlias: true,
                           height: getValueForScreenType(
                             context: context,
-                            mobile: 55,
-                            tablet: 65,
+                            mobile: 45,
+                            tablet: 60,
                             desktop: 75,
                           ),
                         ),
@@ -68,7 +68,7 @@ class _FrontpageAppbarState extends State<FrontpageAppbar> {
                             'assets/images/jmun2024-title.svg',
                             height: getValueForScreenType(
                               context: context,
-                              mobile: 35,
+                              mobile: 30,
                               tablet: 45,
                               desktop: 50,
                             ),

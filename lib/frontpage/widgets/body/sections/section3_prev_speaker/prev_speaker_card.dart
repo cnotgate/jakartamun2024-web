@@ -23,7 +23,7 @@ class _PrevSpeakerCardState extends State<PrevSpeakerCard> {
         width: MediaQuery.of(context).size.width *
             getValueForScreenType(
               context: context,
-              mobile: 0.35,
+              mobile: 0.45,
               tablet: 0.26,
               desktop: 0.18,
             ),
@@ -48,7 +48,7 @@ class _PrevSpeakerCardState extends State<PrevSpeakerCard> {
                 textAlign: TextAlign.center,
                 style: getValueForScreenType(
                   context: context,
-                  mobile: textTheme.titleMedium,
+                  mobile: textTheme.titleSmall,
                   tablet: textTheme.titleMedium,
                   desktop: textTheme.titleMedium,
                 )?.apply(color: displayColor),

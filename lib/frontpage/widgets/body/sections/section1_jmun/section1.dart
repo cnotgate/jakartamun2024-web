@@ -96,7 +96,14 @@ class Section1 extends StatelessWidget {
                             OutlinedButton(
                               onPressed: () {},
                               style: OutlinedButton.styleFrom(
-                                padding: const EdgeInsets.all(20.0),
+                                padding: EdgeInsets.all(
+                                  getValueForScreenType(
+                                    context: context,
+                                    mobile: 16.0,
+                                    tablet: 17.0,
+                                    desktop: 20.0,
+                                  ),
+                                ),
                                 side: BorderSide(width: 2.0, color: displayColor),
                               ),
                               child: Text(
@@ -117,7 +124,7 @@ class Section1 extends StatelessWidget {
                               style: ElevatedButton.styleFrom(
                                 padding: EdgeInsets.all(
                                   getValueForScreenType(
-                                      context: context, mobile: 18.0, tablet: 20.0, desktop: 20.0),
+                                      context: context, mobile: 16.0, tablet: 17.0, desktop: 20.0),
                                 ),
                                 backgroundColor: const Color(0xfff55789),
                                 side: const BorderSide(width: 2.0, color: Color(0xfff55789)),
