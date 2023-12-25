@@ -66791,7 +66791,7 @@ H(a){var s=null,r=t.p
 return A.apj(A.apo(A.ob(B.bz,A.a([B.Fd,A.d8(A.a([new A.bS(B.ky,A.dg(A.a([B.MN,B.wv,B.MO,B.wv,new A.Js(A.a([new A.hQ("Dr. H. Sandiaga Salahuddin Uno, B.B.A., M.B.A.","Minister of Tourism and Creative Economy",A.iQ("assets/images/sandiaga-uno.jpg",B.c2,s,!1,B.aq,1/0),s),new A.hQ("Rosan Perkasa Roeslani, M.B.A., M.A.","Ambassador of Indonesia to the United States",A.iQ("assets/images/rosan-roeslani.jpg",B.c2,s,!1,B.aq,1/0),s),new A.hQ("Tri Purnajaya","Director of Economic Development and Environment at the Ministry of Foreign Affairs",A.iQ("assets/images/tri-purnajaya.jpg",B.c2,s,!1,B.aq,1/0),s),new A.hQ("Heru Budi Hartono, S.E., M.M.","Acting Governor of DKI Jakarta",A.iQ("assets/images/heru-budi-hartono.jpg",B.c2,s,!1,B.aq,1/0),s),new A.hQ("H. E. Mohammad Iskandarsyah Derry Aman","Permanent Representative of Republic of Indonesia to ASEAN",A.iQ("assets/images/derry-aman.jpg",B.c2,s,!1,B.aq,1/0),s),new A.hQ("H. E. Letjen TNI Dr. Hotmangaradja Pandjaitan (Purn.)","Permanent Representative of the Republic of Indonesia to UNESCO 2014-2019",A.iQ("assets/images/hotmangaradja.jpg",B.c2,s,!1,B.aq,1/0),s)],t.hU),s)],r),B.v,B.x,B.t),s)],r),B.b3,B.bs,B.t),B.vh],r),B.a0,B.bc),this.d,B.bf))}}
 A.G1.prototype={
 H(a){var s=t.w
-return A.apl(B.aN,A.iQ("assets/images/background.jpg",null,A.bh(a,null,s).w.a.b*A.eI(a,3.8,5,3.5),!1,B.h6,A.bh(a,null,s).w.a.a),new A.Zo())}}
+return A.apl(B.aN,A.iQ("assets/images/background.jpg",null,A.bh(a,null,s).w.a.b*A.eI(a,3.8,5.7,3.5),!1,B.h6,A.bh(a,null,s).w.a.a),new A.Zo())}}
 A.Zo.prototype={
 $1(a){return B.G4.JF(0,a)},
 $S:163}
@@ -66857,7 +66857,7 @@ $S:87}
 A.cC.prototype={
 ac(){return new A.Md(B.fI,B.k)}}
 A.Md.prototype={
-H(a){var s=this,r=null,q=A.Z(a),p=A.bh(a,r,t.w).w,o=A.eI(a,0.13,0.35,0.17),n=A.pb(15),m=A.Vl(B.N),l=s.e,k=A.iQ("assets/images/un-logo.png",r,r,!1,B.aq,r),j=s.a.c
+H(a){var s=this,r=null,q=A.Z(a),p=A.bh(a,r,t.w).w,o=A.eI(a,0.13,0.45,0.17),n=A.pb(15),m=A.Vl(B.N),l=s.e,k=A.iQ("assets/images/un-logo.png",r,r,!1,B.aq,r),j=s.a.c
 q=q.p3.w
 return A.ajB(!1,!0,A.qr(new A.bS(B.cd,A.iE(r,A.dg(A.a([new A.bS(B.Er,k,r),new A.bS(B.cd,A.cg(j,r,r,q==null?r:q.bL(B.N),B.cs),r)],t.p),B.v,B.bs,B.bJ),B.w,r,new A.cN(l,r,m,n,r,r,B.ai),r,r,r,p.a.a*o),r),B.aV,new A.aaX(s),new A.aaY(s),r),r,!0,r,r,r,r,r,r,r,r,r,new A.aaZ(s,a),r,r,r,r)}}
 A.aaZ.prototype={
