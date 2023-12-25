@@ -89,7 +89,10 @@ class _FrontpageAppbarState extends State<FrontpageAppbar> {
                             },
                             child: Text(
                               'About Us',
-                              style: Theme.of(context).textTheme.titleMedium?.apply(
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium
+                                  ?.apply(
                                     color: Colors.white,
                                   ),
                             ),
@@ -98,16 +101,24 @@ class _FrontpageAppbarState extends State<FrontpageAppbar> {
                             onPressed: () {},
                             child: Text(
                               'Councils',
-                              style: Theme.of(context).textTheme.titleMedium?.apply(
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium
+                                  ?.apply(
                                     color: Colors.white,
                                   ),
                             ),
                           ),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/registration');
+                            },
                             child: Text(
                               'Registration',
-                              style: Theme.of(context).textTheme.titleMedium?.apply(
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium
+                                  ?.apply(
                                     color: Colors.white,
                                   ),
                             ),
@@ -116,7 +127,10 @@ class _FrontpageAppbarState extends State<FrontpageAppbar> {
                             onPressed: () {},
                             child: Text(
                               'Press',
-                              style: Theme.of(context).textTheme.titleMedium?.apply(
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium
+                                  ?.apply(
                                     color: Colors.white,
                                   ),
                             ),
@@ -149,36 +163,40 @@ class _FrontpageAppbarState extends State<FrontpageAppbar> {
                           onPressed: () {},
                           child: Text(
                             'About Us',
-                            style: Theme.of(context).textTheme.titleMedium?.apply(
-                                  color: Colors.white,
-                                ),
+                            style:
+                                Theme.of(context).textTheme.titleMedium?.apply(
+                                      color: Colors.white,
+                                    ),
                           ),
                         ),
                         TextButton(
                           onPressed: () {},
                           child: Text(
                             'Competition',
-                            style: Theme.of(context).textTheme.titleMedium?.apply(
-                                  color: Colors.white,
-                                ),
+                            style:
+                                Theme.of(context).textTheme.titleMedium?.apply(
+                                      color: Colors.white,
+                                    ),
                           ),
                         ),
                         TextButton(
                           onPressed: () {},
                           child: Text(
                             'Registration',
-                            style: Theme.of(context).textTheme.titleMedium?.apply(
-                                  color: Colors.white,
-                                ),
+                            style:
+                                Theme.of(context).textTheme.titleMedium?.apply(
+                                      color: Colors.white,
+                                    ),
                           ),
                         ),
                         TextButton(
                           onPressed: () {},
                           child: Text(
                             'Press',
-                            style: Theme.of(context).textTheme.titleMedium?.apply(
-                                  color: Colors.white,
-                                ),
+                            style:
+                                Theme.of(context).textTheme.titleMedium?.apply(
+                                      color: Colors.white,
+                                    ),
                           ),
                         ),
                       ],

@@ -1,12 +1,10 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class Section1 extends StatelessWidget {
   const Section1({super.key});
 
-  final Color displayColor = const Color(0xffb23727);
+  final Color displayColor = const Color(0xffB73225);
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +20,10 @@ class Section1 extends StatelessWidget {
         borderRadius: BorderRadius.circular(15.0),
         border: Border.all(color: displayColor),
         gradient: const LinearGradient(
-            colors: [Color(0xbbf3f5d8), Color(0x10dc7030)],
+            colors: [Color(0xbbF3F4D7), Color(0xaaDF6A26), Color(0xaaE23F7E)],
             begin: FractionalOffset.topLeft,
             end: FractionalOffset.bottomRight,
-            stops: [0.6, 1.0],
+            stops: [0.2, 0.8, 1.0],
             tileMode: TileMode.clamp),
       ),
       child: ClipRRect(
@@ -46,12 +44,18 @@ class Section1 extends StatelessWidget {
                         "Jakarta International Model United Nations",
                         style: getValueForScreenType(
                           context: context,
-                          mobile:
-                              Theme.of(context).textTheme.displaySmall?.apply(color: displayColor),
-                          tablet:
-                              Theme.of(context).textTheme.displayMedium?.apply(color: displayColor),
-                          desktop:
-                              Theme.of(context).textTheme.displayLarge?.apply(color: displayColor),
+                          mobile: Theme.of(context)
+                              .textTheme
+                              .displaySmall
+                              ?.apply(color: displayColor),
+                          tablet: Theme.of(context)
+                              .textTheme
+                              .displayMedium
+                              ?.apply(color: displayColor),
+                          desktop: Theme.of(context)
+                              .textTheme
+                              .displayLarge
+                              ?.apply(color: displayColor),
                         ),
                       ),
                       const SizedBox(height: 8.0),
@@ -59,12 +63,18 @@ class Section1 extends StatelessWidget {
                         "The Jakarta International Model United Nations (JMUN), organized by Indonesia Student Association for International Studies (ISAFIS) has earned global recognition a reputation as the leading and renowned MUN conference.",
                         style: getValueForScreenType(
                           context: context,
-                          mobile:
-                              Theme.of(context).textTheme.bodyMedium?.apply(color: displayColor),
-                          tablet:
-                              Theme.of(context).textTheme.bodyMedium?.apply(color: displayColor),
-                          desktop:
-                              Theme.of(context).textTheme.bodyLarge?.apply(color: displayColor),
+                          mobile: Theme.of(context)
+                              .textTheme
+                              .bodyMedium
+                              ?.apply(color: displayColor),
+                          tablet: Theme.of(context)
+                              .textTheme
+                              .bodyMedium
+                              ?.apply(color: displayColor),
+                          desktop: Theme.of(context)
+                              .textTheme
+                              .bodyLarge
+                              ?.apply(color: displayColor),
                         ),
                       ),
                       const SizedBox(height: 32.0),
@@ -72,12 +82,18 @@ class Section1 extends StatelessWidget {
                         "JMUN Over the Years",
                         style: getValueForScreenType(
                           context: context,
-                          mobile:
-                              Theme.of(context).textTheme.displaySmall?.apply(color: displayColor),
-                          tablet:
-                              Theme.of(context).textTheme.displayMedium?.apply(color: displayColor),
-                          desktop:
-                              Theme.of(context).textTheme.displayLarge?.apply(color: displayColor),
+                          mobile: Theme.of(context)
+                              .textTheme
+                              .displaySmall
+                              ?.apply(color: displayColor),
+                          tablet: Theme.of(context)
+                              .textTheme
+                              .displayMedium
+                              ?.apply(color: displayColor),
+                          desktop: Theme.of(context)
+                              .textTheme
+                              .displayLarge
+                              ?.apply(color: displayColor),
                         ),
                       ),
                       const SizedBox(height: 8.0),
@@ -85,12 +101,18 @@ class Section1 extends StatelessWidget {
                         "Years after it was first held. now Jakarta MUN has become one of the most prestigious events in the international MUN community, drawing over 400 delegates last year. Jakarta MUN participants do not only hail from major cities in Indonesia, but also from various countries like USA, UK, India, New Zealand, Australia, Malaysia, Singapore and many more.",
                         style: getValueForScreenType(
                           context: context,
-                          mobile:
-                              Theme.of(context).textTheme.bodyMedium?.apply(color: displayColor),
-                          tablet:
-                              Theme.of(context).textTheme.bodyMedium?.apply(color: displayColor),
-                          desktop:
-                              Theme.of(context).textTheme.bodyLarge?.apply(color: displayColor),
+                          mobile: Theme.of(context)
+                              .textTheme
+                              .bodyMedium
+                              ?.apply(color: displayColor),
+                          tablet: Theme.of(context)
+                              .textTheme
+                              .bodyMedium
+                              ?.apply(color: displayColor),
+                          desktop: Theme.of(context)
+                              .textTheme
+                              .bodyLarge
+                              ?.apply(color: displayColor),
                         ),
                       ),
                       const SizedBox(height: 32.0),
@@ -104,11 +126,13 @@ class Section1 extends StatelessWidget {
                                 onPressed: () {},
                                 style: OutlinedButton.styleFrom(
                                   padding: const EdgeInsets.all(20.0),
-                                  side: BorderSide(width: 2.0, color: displayColor),
+                                  side: BorderSide(
+                                      width: 2.0, color: displayColor),
                                 ),
                                 child: Text(
                                   "About Us",
-                                  style: textTheme.titleMedium?.apply(color: displayColor),
+                                  style: textTheme.titleMedium
+                                      ?.apply(color: displayColor),
                                 ),
                               ),
                               ResponsiveBuilder(builder: (context, sizing) {
@@ -130,11 +154,13 @@ class Section1 extends StatelessWidget {
                                         desktop: 20.0),
                                   ),
                                   backgroundColor: const Color(0xfff55789),
-                                  side: const BorderSide(width: 2.0, color: Color(0xfff55789)),
+                                  side: const BorderSide(
+                                      width: 2.0, color: Color(0xfff55789)),
                                 ),
                                 child: Text(
                                   "Register Now",
-                                  style: textTheme.titleMedium?.apply(color: Colors.white),
+                                  style: textTheme.titleMedium
+                                      ?.apply(color: Colors.white),
                                 ),
                               ),
                             ];
