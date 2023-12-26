@@ -14,8 +14,8 @@ class _FormSectionState extends State<FormSection> {
   late String fullName, email, status, institution, nationality;
   late int age;
   late String contactNumber, lineId;
-  late String councilOne, councilTwo, councilThree;
-  late String councilCountryOne, councilCountryTwo, councilCountryThree;
+  String? councilOne, councilTwo, councilThree;
+  String? councilCountryOne, councilCountryTwo, councilCountryThree;
   late String previousExperience, dietaryRestrictions, medicalConditions, accom;
   // File? proofOfTransfer;
 
@@ -32,85 +32,81 @@ class _FormSectionState extends State<FormSection> {
         borderRadius: BorderRadius.circular(15.0),
         border: Border.all(color: displayColor),
         gradient: const LinearGradient(
-            colors: [Color(0xbbF3F4D7), Color(0xffDF6A26), Color(0xbbE23F7E)],
+            colors: [Color(0xffF3F4D7), Color(0xffFFDBA1)],
             begin: FractionalOffset.topLeft,
             end: FractionalOffset.bottomRight,
-            stops: [0.2, 0.8, 1.0],
+            // stops: [0.4, 0.7, 1],
             tileMode: TileMode.clamp),
       ),
       child: Form(
         child: Padding(
-          padding:
-              const EdgeInsets.only(left: 50.0, right: 50, top: 40, bottom: 40),
+          padding: MediaQuery.of(context).size.width < 600
+              ? const EdgeInsets.all(20.0) // Smaller padding for mobile screens
+              : const EdgeInsets.symmetric(
+                  horizontal: 70,
+                  vertical: 30), // Larger padding for larger screens
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // * === Full Name ===
-              Text(
-                'Full Name',
+              // * ===== Identity =====
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Identity',
+                    style: headerDisplay(context),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
               ),
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Full Name',
-                  border: OutlineInputBorder(),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter full name';
-                  }
-                  return null;
+              SizedBox(height: 10.0),
+              // * === Full Name & E-mail ===
+              // * === Age & Status ===
+              Builder(
+                builder: (context) {
+                  // Check if the screen width is less than a certain threshold, e.g., 600 pixels
+                  bool isMobile = MediaQuery.of(context).size.width < 600;
+
+                  // Based on the screen width, choose between a Row or a Column
+                  return isMobile
+                      ? Column(
+                          children: [
+                            buildNameField(context),
+                            SizedBox(height: 10.0),
+                            buildEmailField(context),
+                          ],
+                        )
+                      : Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            // Container to hold the age field
+                            Expanded(
+                              child: buildNameField(context),
+                            ),
+                            SizedBox(width: 50.0), // Space between the fields
+                            // Container to hold the status field
+                            Expanded(
+                              child: buildEmailField(context),
+                            ),
+                          ],
+                        );
                 },
-                onSaved: (value) => fullName = value!,
               ),
               SizedBox(height: 20.0),
-              // * === Email ===
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Email',
-                  border: OutlineInputBorder(),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter email';
-                  }
-                  return null;
-                },
-              ),
-              SizedBox(height: 10.0),
-              // * === Status ===
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Status',
-                  border: OutlineInputBorder(),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter status';
-                  }
-                  return null;
-                },
-                onSaved: (value) => status = value!,
-              ),
-              SizedBox(height: 10.0),
-              // * === Institute ===
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Institute',
-                  border: OutlineInputBorder(),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter institute';
-                  }
-                  return null;
-                },
-                onSaved: (value) => institution = value!,
-              ),
-              SizedBox(height: 10.0),
+
               // * === Nationality ===
+              Text(
+                'Nationality:',
+                textAlign: TextAlign.start,
+                style: fontDisplay(context),
+              ),
               TextFormField(
                 decoration: InputDecoration(
                   hintText: 'Nationality',
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15)),
+                  filled: true,
+                  fillColor: Color(0x55F7ECE1),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -121,26 +117,92 @@ class _FormSectionState extends State<FormSection> {
                 onSaved: (value) => nationality = value!,
               ),
               SizedBox(height: 10.0),
-              // * === Age ===
+              // * === Institute ===
+              Text(
+                'Institute:',
+                textAlign: TextAlign.start,
+                style: fontDisplay(context),
+              ),
               TextFormField(
                 decoration: InputDecoration(
-                  hintText: 'Age',
-                  border: OutlineInputBorder(),
+                  hintText: 'Institute',
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15)),
+                  filled: true,
+                  fillColor: Color(0x55F7ECE1),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter age';
+                    return 'Please enter institute';
                   }
                   return null;
                 },
-                onSaved: (value) => age = int.parse(value!),
+                onSaved: (value) => institution = value!,
+              ),
+              SizedBox(height: 10.0),
+              // * === Age & Status ===
+              Builder(
+                builder: (context) {
+                  // Check if the screen width is less than a certain threshold, e.g., 600 pixels
+                  bool isMobile = MediaQuery.of(context).size.width < 600;
+
+                  // Based on the screen width, choose between a Row or a Column
+                  return isMobile
+                      ? Column(
+                          children: [
+                            buildAgeField(context),
+                            SizedBox(height: 10.0),
+                            buildStatusField(context),
+                          ],
+                        )
+                      : Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            // Container to hold the age field
+                            Expanded(
+                              child: buildAgeField(context),
+                            ),
+                            SizedBox(width: 50.0), // Space between the fields
+                            // Container to hold the status field
+                            Expanded(
+                              child: buildStatusField(context),
+                            ),
+                          ],
+                        );
+                },
+              ),
+              SizedBox(height: 20.0),
+
+              // * ===== Contact Address =====
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: Text(
+                      'Contact Address',
+                      style: headerDisplay(context),
+                      textAlign: TextAlign.center,
+                      softWrap: true, // Enable text wrapping
+                      overflow: TextOverflow
+                          .visible, // Ensure the text is visible even when wrapping
+                    ),
+                  ),
+                ],
               ),
               SizedBox(height: 10.0),
               // * === Contact Number ===
+              Text(
+                'Contact Number:',
+                textAlign: TextAlign.start,
+                style: fontDisplay(context),
+              ),
               TextFormField(
                 decoration: InputDecoration(
                   hintText: 'Contact Number',
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15)),
+                  filled: true,
+                  fillColor: Color(0x55F7ECE1),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -152,10 +214,18 @@ class _FormSectionState extends State<FormSection> {
               ),
               SizedBox(height: 10.0),
               // * === Line ID ===
+              Text(
+                'Line ID:',
+                textAlign: TextAlign.start,
+                style: fontDisplay(context),
+              ),
               TextFormField(
                 decoration: InputDecoration(
                   hintText: 'Line ID',
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15)),
+                  filled: true,
+                  fillColor: Color(0x55F7ECE1),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -165,117 +235,184 @@ class _FormSectionState extends State<FormSection> {
                 },
                 onSaved: (value) => lineId = value!,
               ),
-              SizedBox(height: 10.0),
-              // * === Council 1 ===
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Council 1',
-                  border: OutlineInputBorder(),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter council 1';
-                  }
-                  return null;
-                },
-                onSaved: (value) => councilOne = value!,
+              SizedBox(height: 20.0),
+              // * ===== Council Preference =====
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Council Preference',
+                    style: headerDisplay(context),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
               ),
               SizedBox(height: 10.0),
-              // * === Council 2 ===
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Council 2',
-                  border: OutlineInputBorder(),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter council 2';
-                  }
-                  return null;
+              // * === First Council ===
+              Builder(
+                builder: (context) {
+                  // Check if the screen width is less than a certain threshold, e.g., 600 pixels
+                  bool isMobile = MediaQuery.of(context).size.width < 600;
+
+                  // Based on the screen width, choose between a Row or a Column
+                  return isMobile
+                      ? Column(
+                          children: [
+                            buildCouncilField(context, 1, councilOne),
+                            SizedBox(height: 10.0),
+                            buildCouncilCountryField(
+                                context, 1, councilCountryOne),
+                          ],
+                        )
+                      : Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            // Container to hold the age field
+                            Expanded(
+                              child: buildCouncilField(context, 1, councilOne),
+                            ),
+                            SizedBox(width: 50.0), // Space between the fields
+                            // Container to hold the status field
+                            Expanded(
+                              child: buildCouncilCountryField(
+                                  context, 1, councilCountryOne),
+                            ),
+                          ],
+                        );
                 },
-                onSaved: (value) => councilTwo = value!,
               ),
               SizedBox(height: 10.0),
-              // * === Council 3 ===
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Council 3',
-                  border: OutlineInputBorder(),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter council 3';
-                  }
-                  return null;
+              // * === Second Council ===
+              Builder(
+                builder: (context) {
+                  // Check if the screen width is less than a certain threshold, e.g., 600 pixels
+                  bool isMobile = MediaQuery.of(context).size.width < 600;
+
+                  // Based on the screen width, choose between a Row or a Column
+                  return isMobile
+                      ? Column(
+                          children: [
+                            buildCouncilField(context, 2, councilTwo),
+                            SizedBox(height: 10.0),
+                            buildCouncilCountryField(
+                                context, 2, councilCountryTwo),
+                          ],
+                        )
+                      : Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            // Container to hold the age field
+                            Expanded(
+                              child: buildCouncilField(context, 2, councilTwo),
+                            ),
+                            SizedBox(width: 50.0), // Space between the fields
+                            // Container to hold the status field
+                            Expanded(
+                              child: buildCouncilCountryField(
+                                  context, 2, councilCountryTwo),
+                            ),
+                          ],
+                        );
                 },
-                onSaved: (value) => councilThree = value!,
               ),
               SizedBox(height: 10.0),
-              // * === Council Country 1 ===
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Council Country 1',
-                  border: OutlineInputBorder(),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter council country 1';
-                  }
-                  return null;
+              // * === Third Council ===
+              Builder(
+                builder: (context) {
+                  // Check if the screen width is less than a certain threshold, e.g., 600 pixels
+                  bool isMobile = MediaQuery.of(context).size.width < 600;
+
+                  // Based on the screen width, choose between a Row or a Column
+                  return isMobile
+                      ? Column(
+                          children: [
+                            buildCouncilField(context, 3, councilThree),
+                            SizedBox(height: 10.0),
+                            buildCouncilCountryField(
+                                context, 3, councilCountryThree),
+                          ],
+                        )
+                      : Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            // Container to hold the age field
+                            Expanded(
+                              child:
+                                  buildCouncilField(context, 3, councilThree),
+                            ),
+                            SizedBox(width: 50.0), // Space between the fields
+                            // Container to hold the status field
+                            Expanded(
+                              child: buildCouncilCountryField(
+                                  context, 3, councilCountryThree),
+                            ),
+                          ],
+                        );
                 },
-                onSaved: (value) => councilCountryOne = value!,
               ),
-              SizedBox(height: 10.0),
-              // * === Council Country 2 ===
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Council Country 2',
-                  border: OutlineInputBorder(),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter council country 2';
-                  }
-                  return null;
-                },
-                onSaved: (value) => councilCountryTwo = value!,
-              ),
-              SizedBox(height: 10.0),
-              // * === Council Country 3 ===
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Council Country 3',
-                  border: OutlineInputBorder(),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter council country 3';
-                  }
-                  return null;
-                },
-                onSaved: (value) => councilCountryThree = value!,
+              SizedBox(height: 20.0),
+              // * ===== Additional Information =====
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: Text(
+                      'Additional Information',
+                      style: headerDisplay(context),
+                      textAlign: TextAlign.center,
+                      softWrap: true, // Enable text wrapping
+                      overflow: TextOverflow
+                          .visible, // Ensure the text is visible even when wrapping
+                    ),
+                  ),
+                ],
               ),
               SizedBox(height: 10.0),
               // * === Previous Experience ===
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Previous Experience',
-                  border: OutlineInputBorder(),
+              Text(
+                'Previous Experience:',
+                textAlign: TextAlign.start,
+                style: fontDisplay(context),
+              ),
+              Container(
+                height: 300,
+                child: ClipRRect(
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      hintText: 'Describe your previous experience in MUN',
+                      suffixText: 'If none type "-"',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      filled: true,
+                      fillColor: Color(0x55F7ECE1),
+                    ),
+                    maxLines:
+                        15, // Allows the text field to expand vertically as the user types
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter previous experience';
+                      }
+                      return null;
+                    },
+                    onSaved: (value) => previousExperience = value!,
+                  ),
                 ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter previous experience';
-                  }
-                  return null;
-                },
-                onSaved: (value) => previousExperience = value!,
               ),
               SizedBox(height: 10.0),
               // * === Dietary Restrictions ===
+              Text(
+                'Dietary Restrictions:',
+                textAlign: TextAlign.start,
+                style: fontDisplay(context),
+              ),
               TextFormField(
                 decoration: InputDecoration(
-                  hintText: 'Dietary Restrictions',
-                  border: OutlineInputBorder(),
+                  hintText: 'If none type "-"',
+                  // suffixText: 'If more than one, separate with commas',
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15)),
+                  filled: true,
+                  fillColor: Color(0x55F7ECE1),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -287,10 +424,19 @@ class _FormSectionState extends State<FormSection> {
               ),
               SizedBox(height: 10.0),
               // * === Medical Conditions ===
+              Text(
+                'Medical Conditions:',
+                textAlign: TextAlign.start,
+                style: fontDisplay(context),
+              ),
               TextFormField(
                 decoration: InputDecoration(
-                  hintText: 'Medical Conditions',
-                  border: OutlineInputBorder(),
+                  hintText: 'If none type "-"',
+                  // suffixText: 'Separate with commas',
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15)),
+                  filled: true,
+                  fillColor: Color(0x55F7ECE1),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -302,10 +448,18 @@ class _FormSectionState extends State<FormSection> {
               ),
               SizedBox(height: 10.0),
               // * === Accomodation ===
+              Text(
+                'Accomodation:',
+                textAlign: TextAlign.start,
+                style: fontDisplay(context),
+              ),
               TextFormField(
                 decoration: InputDecoration(
                   hintText: 'Accomodation',
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15)),
+                  filled: true,
+                  fillColor: Color(0x55F7ECE1),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -315,12 +469,332 @@ class _FormSectionState extends State<FormSection> {
                 },
                 onSaved: (value) => accom = value!,
               ),
-              SizedBox(height: 10.0),
+              SizedBox(height: 20.0),
               // * === Proof of Transfer ===
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: Text(
+                      'Payment',
+                      style: headerDisplay(context),
+                      textAlign: TextAlign.center,
+                      softWrap: true, // Enable text wrapping
+                      overflow: TextOverflow
+                          .visible, // Ensure the text is visible even when wrapping
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: Text(
+                      'Please make your payment through this bank account \n(BCA : 1234 5678 9123 4567)\n and upload your proof of transfer below.',
+                      textAlign: TextAlign.center,
+                      style: fontDisplay(context),
+                      softWrap: true,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton.icon(
+                    onPressed: () {},
+                    icon: Icon(Icons.file_upload),
+                    label: Text('Upload Proof of Transfer'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.deepOrange, // Background color
+                      foregroundColor: Colors.white, // Text and icon color
+                      elevation: 5, // Shadow elevation
+                      shape: RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.circular(30), // Rounded corners
+                      ),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 15), // Button padding
+                    ),
+                  ),
+                ],
+              ),
+
+              SizedBox(height: 20.0),
+              Divider(
+                color: Color(0xff6D261F),
+                thickness: 1,
+              ),
+              SizedBox(height: 20.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 200,
+                    height: 40,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text('Submit',
+                          style: getValueForScreenType(
+                            context: context,
+                            mobile: Theme.of(context)
+                                .textTheme
+                                .displaySmall
+                                ?.copyWith(
+                                    fontSize: 20, color: Color(0xffF8F9E7)),
+                            tablet: Theme.of(context)
+                                .textTheme
+                                .displaySmall
+                                ?.copyWith(
+                                    fontSize: 20, color: Color(0xffF8F9E7)),
+                            desktop: Theme.of(context)
+                                .textTheme
+                                .displaySmall
+                                ?.copyWith(
+                                    fontSize: 20, color: Color(0xffF8F9E7)),
+                          )),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xff6D261F), // Background color
+                        foregroundColor: Colors.white, // Text and icon color
+                        elevation: 5, // Shadow elevation
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.circular(30), // Rounded corners
+                        ),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10), // Button padding
+                      ),
+                    ),
+                  ),
+                ],
+              )
             ],
           ),
         ),
       ),
+    );
+  }
+
+  TextStyle? fontDisplay(BuildContext context) {
+    return getValueForScreenType(
+      context: context,
+      mobile: Theme.of(context).textTheme.bodyLarge?.apply(color: displayColor),
+      tablet: Theme.of(context).textTheme.bodyLarge?.apply(color: displayColor),
+      desktop:
+          Theme.of(context).textTheme.bodyLarge?.apply(color: displayColor),
+    );
+  }
+
+  TextStyle? headerDisplay(BuildContext context) {
+    return getValueForScreenType(
+      context: context,
+      mobile:
+          Theme.of(context).textTheme.displaySmall?.apply(color: displayColor),
+      tablet:
+          Theme.of(context).textTheme.displaySmall?.apply(color: displayColor),
+      desktop:
+          Theme.of(context).textTheme.displaySmall?.apply(color: displayColor),
+    );
+  }
+
+  Widget buildAgeField(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Age:',
+          textAlign: TextAlign.start,
+          style: fontDisplay(context),
+        ),
+        TextFormField(
+          decoration: InputDecoration(
+            hintText: 'Age',
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+            filled: true,
+            fillColor: Color(0x55F7ECE1),
+          ),
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please enter age';
+            }
+            return null;
+          },
+          onSaved: (value) => age = int.parse(value!),
+        ),
+      ],
+    );
+  }
+
+  Widget buildStatusField(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Status:',
+          textAlign: TextAlign.start,
+          style: fontDisplay(context),
+        ),
+        TextFormField(
+          decoration: InputDecoration(
+            hintText: 'Status',
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+            filled: true,
+            fillColor: Color(0x55F7ECE1),
+          ),
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please enter status';
+            }
+            return null;
+          },
+          onSaved: (value) => status = value!,
+        ),
+      ],
+    );
+  }
+
+  Widget buildNameField(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // * === Full Name ===
+        Text(
+          'Full Name:',
+          textAlign: TextAlign.start,
+          style: fontDisplay(context),
+        ),
+        TextFormField(
+          decoration: InputDecoration(
+            filled: true,
+            fillColor: Color(0x55F7ECE1),
+            hintText: 'Full Name',
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+          ),
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please enter full name';
+            }
+            return null;
+          },
+          onSaved: (value) => fullName = value!,
+        ),
+      ],
+    );
+  }
+
+  Widget buildEmailField(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // * === Email ===
+        Text(
+          'Email:',
+          textAlign: TextAlign.start,
+          style: fontDisplay(context),
+        ),
+        TextFormField(
+          decoration: InputDecoration(
+            hintText: 'Email',
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+            filled: true,
+            fillColor: Color(0x55F7ECE1),
+          ),
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please enter email';
+            }
+            return null;
+          },
+          onSaved: (value) => email = value!,
+        ),
+      ],
+    );
+  }
+
+  Widget buildCouncilField(
+      BuildContext context, int councilNumber, String? council) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // * === Council ===
+        Text(
+          'Council $councilNumber:',
+          textAlign: TextAlign.start,
+          style: fontDisplay(context),
+        ),
+        TextFormField(
+          decoration: InputDecoration(
+            hintText: 'WHO, ASEAN, Press Council, etc.',
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+            filled: true,
+            fillColor: Color(0x55F7ECE1),
+          ),
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please enter council $councilNumber';
+            }
+            return null;
+          },
+          onSaved: (value) {
+            switch (councilNumber) {
+              case 1:
+                councilOne = value ?? '';
+                break;
+              case 2:
+                councilTwo = value ?? '';
+                break;
+              case 3:
+                councilThree = value ?? '';
+                break;
+            }
+          },
+        ),
+      ],
+    );
+  }
+
+  Widget buildCouncilCountryField(
+      BuildContext context, int councilNumber, String? council) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // * === Email ===
+        Text(
+          'Council Country $councilNumber:',
+          textAlign: TextAlign.start,
+          style: fontDisplay(context),
+        ),
+        TextFormField(
+          decoration: InputDecoration(
+            hintText: 'Council Country $councilNumber',
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+            filled: true,
+            fillColor: Color(0x55F7ECE1),
+          ),
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please enter council country $councilNumber';
+            }
+            return null;
+          },
+          onSaved: (value) {
+            switch (councilNumber) {
+              case 1:
+                councilCountryOne = value ?? '';
+                break;
+              case 2:
+                councilCountryTwo = value ?? '';
+                break;
+              case 3:
+                councilCountryThree = value ?? '';
+                break;
+            }
+          },
+        ),
+      ],
     );
   }
 }

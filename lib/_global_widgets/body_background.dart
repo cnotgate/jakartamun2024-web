@@ -6,7 +6,7 @@ class BodyBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // return Image.asset(
-    //   'assets/images/light-bg.png',
+    //   'assets/images/background.jpg',
     //   height: MediaQuery.of(context).size.height * 4,
     //   width: MediaQuery.of(context).size.width,
     //   repeat: ImageRepeat.repeatY,
@@ -14,7 +14,11 @@ class BodyBackground extends StatelessWidget {
     return ShaderMask(
       shaderCallback: (Rect bounds) {
         return const LinearGradient(
-                colors: [Color(0x33f06e34), Color(0x33f55789), Color(0x33fbb53b)],
+                colors: [
+                  Color(0x55f06e34),
+                  Color(0x55f55789),
+                  Color(0x55fbb53b)
+                ],
                 begin: FractionalOffset.topLeft,
                 end: FractionalOffset.bottomRight,
                 stops: [0.0, 0.5, 1.0],
@@ -22,11 +26,14 @@ class BodyBackground extends StatelessWidget {
             .createShader(bounds);
       },
       blendMode: BlendMode.srcOver,
-      child: Image.asset(
-        'assets/images/light-bg.png',
-        height: MediaQuery.of(context).size.height * 4,
-        width: MediaQuery.of(context).size.width,
-        repeat: ImageRepeat.repeatY,
+      child: Opacity(
+        opacity: 0.5,
+        child: Image.asset(
+          'assets/images/background.jpg',
+          height: MediaQuery.of(context).size.height * 5,
+          width: MediaQuery.of(context).size.width,
+          repeat: ImageRepeat.repeatY,
+        ),
       ),
     );
   }
