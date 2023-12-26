@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jakartamun_web/frontpage/widgets/appbar/frontpage_appbar.dart';
 import 'package:jakartamun_web/frontpage/widgets/body/frontpage_body.dart';
 

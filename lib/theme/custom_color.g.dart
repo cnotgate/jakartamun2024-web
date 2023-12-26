@@ -1,8 +1,6 @@
-import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
 
 const error = Color(0xFFB23727);
-
 
 CustomColors lightCustomColors = const CustomColors(
   sourceError: Color(0xFFB23727),
@@ -19,8 +17,6 @@ CustomColors darkCustomColors = const CustomColors(
   errorContainer: Color(0xFF8B1A0E),
   onErrorContainer: Color(0xFFFFDAD4),
 );
-
-
 
 /// Defines a set of custom colors, each comprised of 4 complementary tones.
 ///
@@ -79,7 +75,6 @@ class CustomColors extends ThemeExtension<CustomColors> {
   /// See also:
   ///   * <https://m3.material.io/styles/color/the-color-system/custom-colors#harmonization>
   CustomColors harmonized(ColorScheme dynamic) {
-    return copyWith(
-    );
+    return copyWith();
   }
 }
