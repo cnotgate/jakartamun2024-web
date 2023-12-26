@@ -4,6 +4,10 @@ import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:jakartamun_web/about_us/about_us.dart';
 import 'package:jakartamun_web/adminpage/adminpage.dart';
 import 'package:jakartamun_web/frontpage/frontpage.dart';
+import 'package:jakartamun_web/presspage/presspage.dart';
+import 'package:jakartamun_web/presspage/widgets/body/presspage_body.dart';
+import 'package:jakartamun_web/presspage/widgets/body/sections/PaginatedGridView.dart';
+import 'package:jakartamun_web/presspage/widgets/body/sections/testpageview.dart';
 import 'package:jakartamun_web/registerpage/registerpage.dart';
 import 'package:jakartamun_web/theme/custom_color.g.dart';
 import 'package:jakartamun_web/theme/text_theme.dart';
@@ -31,20 +35,39 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Jakarta MUN 2024',
-      theme: ThemeData(
-        useMaterial3: true,
-        textTheme: textTheme,
-        extensions: [lightCustomColors],
-      ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const Frontpage(),
-        '/about-us': (context) => const AboutUs(),
-        '/registration': (context) => const RegisterPage(),
-        '/admin': (context) => const AdminPage(),
-      },
-    );
+    return DynamicColorBuilder(
+        builder: (ColorScheme? lightDynamic, ColorScheme? darkDynamic) {
+      ColorScheme lightScheme;
+      ColorScheme darkScheme;
+
+      if (lightDynamic != null && darkDynamic != null) {
+        lightScheme = lightDynamic.harmonized();
+        lightCustomColors = lightCustomColors.harmonized(lightScheme);
+
+        // Repeat for the dark color scheme.
+        darkScheme = darkDynamic.harmonized();
+        darkCustomColors = darkCustomColors.harmonized(darkScheme);
+      } else {
+        // Otherwise, use fallback schemes.
+        lightScheme = lightColorScheme;
+        darkScheme = darkColorScheme;
+      }
+
+      return MaterialApp(
+        title: 'Jakarta MUN 2024',
+        theme: ThemeData(
+          useMaterial3: true,
+          colorScheme: lightScheme,
+          textTheme: textTheme,
+          extensions: [lightCustomColors],
+        ),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => const Frontpage(),
+          '/about-us': (context) => const AboutUs(),
+          '/registration': (context) => const Registration(),
+        },
+      );
+    });
   }
 }

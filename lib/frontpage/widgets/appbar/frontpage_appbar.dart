@@ -118,7 +118,9 @@ class _FrontpageAppbarState extends State<FrontpageAppbar> {
                             ),
                           ),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/press');
+                            },
                             child: Text(
                               'Press',
                               style: Theme.of(context).textTheme.titleMedium?.apply(
