@@ -29,7 +29,7 @@ class _PressPageBodyCard1State extends State<PressPageBodyCard1> {
         tablet: MediaQuery.of(context).size.width * 0.75 * 0.4,
       ),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15.0),
+        borderRadius: BorderRadius.circular(5.0),
         border: Border.all(color: displayColor),
         gradient: const LinearGradient(
             colors: [Color(0x10dc7030), Color(0x10dc7030)],
@@ -39,24 +39,47 @@ class _PressPageBodyCard1State extends State<PressPageBodyCard1> {
             tileMode: TileMode.clamp),
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(15.0),
+        borderRadius: BorderRadius.circular(5.0),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.start,
           // crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Expanded(
                 flex: 1,
                 child: Image.network(
-                    'https://ichef.bbci.co.uk/news/800/cpsprodpb/bdfc/live/6fd5bc30-9a7a-11ee-ae24-71cd4a861931.jpg')),
-            const Expanded(
+                    'https://ichef.bbci.co.uk/news/800/cpsprodpb/bdfc/live/6fd5bc30-9a7a-11ee-ae24-71cd4a861931.jpg', fit: BoxFit.cover,)),
+            Expanded(
               flex: 2,
               child:
                   Column(mainAxisAlignment: MainAxisAlignment.start, children: [
                 Padding(
                   padding: EdgeInsets.only(left: 2),
                   child: SelectionArea(
-                    child: Text(
-                        'Perang Israel-Gaza: Harga perdamaian bagi Israel dan Palestina'),
+                    child: Container(
+                      height:  getValueForScreenType(
+                                        context: context,
+                                        mobile: 45,
+                                        tablet: 40,
+                                        desktop: 80),
+                      child: Text(
+                        'Perang Israel-Gaza: Harga perdamaian bagi Israel dan Palestina',
+                        style: getValueForScreenType(
+                          context: context,
+                          mobile: Theme.of(context)
+                              .textTheme
+                              .titleSmall
+                              ?.apply(color: displayColor),
+                          tablet: Theme.of(context)
+                              .textTheme
+                              .titleSmall
+                              ?.apply(color: displayColor),
+                          desktop: Theme.of(context)
+                              .textTheme
+                              .titleSmall
+                              ?.apply(color: displayColor),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ]),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:jakartamun_web/presspage/widgets/cards/press_card1.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class MyPaginatedGridView extends StatefulWidget {
   @override
@@ -11,13 +13,14 @@ class _MyGridViewState extends State<MyPaginatedGridView> {
     await Future.delayed(const Duration(seconds: 2));
 
     // Replace this with your actual data fetching logic
-    return List.generate(500, (index) => 'Item $index');
+    return List.generate(50, (index) => 'Item $index');
   }
 
   @override
   Widget build(BuildContext context) {
     final PageController controller = PageController();
-
+    int numberOfCards = getValueForScreenType(
+        context: context, mobile: 15, tablet: 28, desktop: 20);
     return FutureBuilder<List<String>>(
       future: fetchData(),
       builder: (context, snapshot) {
@@ -27,24 +30,29 @@ class _MyGridViewState extends State<MyPaginatedGridView> {
           return Column(
             children: [
               Expanded(
-                // width: 800,
-                // height: 500,
                 child: PageView.builder(
                     controller: controller,
-                    itemCount: (fetchDataList.length / 44).ceil(),
+                    itemCount: (fetchDataList.length / numberOfCards).ceil(),
                     itemBuilder: ((context, x_axis) {
                       return GridView.builder(
                           gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 2,
-                                  childAspectRatio: 5.5,
-                                  mainAxisSpacing: 10),
-                          itemCount: 44,
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: getValueForScreenType(
+                                      context: context,
+                                      mobile: 1,
+                                      tablet: 2,
+                                      desktop: 2),
+                                  childAspectRatio: 6,
+                                  crossAxisSpacing: 10,
+                                  mainAxisSpacing: 40),
+                          itemCount: numberOfCards,
                           itemBuilder: ((context, y_axis) {
-                            if ((y_axis + 1) + (x_axis * 44) <=
+                            if ((y_axis + 1) + (x_axis * numberOfCards) <=
                                 fetchDataList.length) {
-                              return Text(
-                                  "anjingg ${(y_axis + 1) + (x_axis * 44)}");
+                              return PressPageBodyCard1(
+                                imageLink: '',
+                                title: '',
+                              );
                             }
                           }));
 
