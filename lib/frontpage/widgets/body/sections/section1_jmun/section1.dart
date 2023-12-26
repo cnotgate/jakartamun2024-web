@@ -33,7 +33,13 @@ class Section1 extends StatelessWidget {
                 ),
           ),
         ),
-        const SizedBox(height: 32.0),
+        SizedBox(
+            height: getValueForScreenType(
+          context: context,
+          mobile: 16.0,
+          tablet: 16.0,
+          desktop: 32.0,
+        )),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [

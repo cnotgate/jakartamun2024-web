@@ -3,6 +3,7 @@ import 'package:jakartamun_web/frontpage/widgets/body/sections/section1_jmun/sec
 import 'package:jakartamun_web/_global_widgets/footer.dart';
 import 'package:jakartamun_web/frontpage/widgets/body/sections/section2_council/section2.dart';
 import 'package:jakartamun_web/frontpage/widgets/body/sections/section3_prev_speaker/section3.dart';
+import 'package:jakartamun_web/frontpage/widgets/body/sections/section4_sponsors/section4.dart';
 
 import 'frontpage_body_background.dart';
 
@@ -41,14 +42,12 @@ class _FrontpageBodyState extends State<FrontpageBody> {
                   child: Column(
                     children: [
                       const Section1(),
-                      const SizedBox(
-                        height: 96.0,
-                      ),
+                      const SizedBox(height: 96.0),
                       const Section2(),
-                      const SizedBox(
-                        height: 96.0,
-                      ),
+                      const SizedBox(height: 96.0),
                       Section3(),
+                      const SizedBox(height: 96.0),
+                      const Section4(),
                     ],
                   ),
                 )

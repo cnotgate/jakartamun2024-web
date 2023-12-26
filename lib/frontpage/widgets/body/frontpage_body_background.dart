@@ -28,9 +28,9 @@ class FrontpageBodyBackground extends StatelessWidget {
         height: MediaQuery.of(context).size.height *
             getValueForScreenType(
               context: context,
-              mobile: 5.7,
-              tablet: 3.5,
-              desktop: 3.8,
+              mobile: 7.2,
+              tablet: 5.0,
+              desktop: 5.3,
             ),
         width: MediaQuery.of(context).size.width,
         repeat: ImageRepeat.repeatY,
