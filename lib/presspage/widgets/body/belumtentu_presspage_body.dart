@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jakartamun_web/presspage/widgets/body/sections/presspagebody_section1.dart';
+import 'package:jakartamun_web/presspage/widgets/body/sections/belumtentu_presspagebody_section1.dart';
 import '../../../_global_widgets/body_background.dart';
 import '../../../_global_widgets/footer.dart';
 

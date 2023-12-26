@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:jakartamun_web/presspage/widgets/cards/press_card1.dart';
+import 'package:jakartamun_web/presspage/widgets/cards/belumtentu_press_card1.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class PressPageBodySection2 extends StatelessWidget {
