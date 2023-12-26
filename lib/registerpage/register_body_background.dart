@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-class FrontpageBodyBackground extends StatelessWidget {
-  const FrontpageBodyBackground({super.key});
+class RegisterBodyBackground extends StatelessWidget {
+  const RegisterBodyBackground({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,9 +12,9 @@ class FrontpageBodyBackground extends StatelessWidget {
           height: MediaQuery.of(context).size.height *
               getValueForScreenType(
                 context: context,
-                mobile: 7.2,
-                tablet: 5.0,
-                desktop: 5.3,
+                mobile: 5.7,
+                tablet: 3.5,
+                desktop: 3.8,
               ),
           width: MediaQuery.of(context).size.width,
           decoration: const BoxDecoration(
@@ -33,9 +33,9 @@ class FrontpageBodyBackground extends StatelessWidget {
             height: MediaQuery.of(context).size.height *
                 getValueForScreenType(
                   context: context,
-                  mobile: 7.2,
-                  tablet: 5.0,
-                  desktop: 5.3,
+                  mobile: 5.7,
+                  tablet: 3.5,
+                  desktop: 3.8,
                 ),
             width: MediaQuery.of(context).size.width,
             repeat: ImageRepeat.repeatY,

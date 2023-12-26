@@ -1,16 +1,17 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:jakartamun_web/adminpage/adminpage.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-class FrontpageAppbar extends StatefulWidget {
-  const FrontpageAppbar({super.key});
+class AdminPageAppbar extends StatefulWidget {
+  const AdminPageAppbar({super.key});
 
   @override
-  State<FrontpageAppbar> createState() => _FrontpageAppbarState();
+  State<AdminPageAppbar> createState() => _AdminPageAppbarState();
 }
 
-class _FrontpageAppbarState extends State<FrontpageAppbar> {
+class _AdminPageAppbarState extends State<AdminPageAppbar> {
   bool expand = false;
   @override
   Widget build(BuildContext context) {
@@ -28,12 +29,11 @@ class _FrontpageAppbarState extends State<FrontpageAppbar> {
             horizontal: 20,
           ),
           decoration: const BoxDecoration(
-            // color: Color(0x99dc7030),
             gradient: LinearGradient(
-                colors: [Color(0xccdc7030), Color(0xccFFBC5D), Color(0xccdc7030)],
+                colors: [Color(0x00f06e34), Color(0x00f55789)],
                 begin: FractionalOffset.centerLeft,
                 end: FractionalOffset.centerRight,
-                stops: [0.2, 0.5, 0.8],
+                stops: [0.0, 1.0],
                 tileMode: TileMode.clamp),
           ),
           child: Column(
@@ -44,34 +44,27 @@ class _FrontpageAppbarState extends State<FrontpageAppbar> {
                   Row(
                     children: [
                       TextButton(
-                        onLongPress: () {
-                          Navigator.pushNamed(context, '/admin');
-                        },
-                        onPressed: () {
-                          Navigator.pushReplacementNamed(context, '/');
-                        },
+                        onPressed: () {},
                         child: Image.asset(
                           'assets/images/jmun-logo.png',
                           isAntiAlias: true,
                           height: getValueForScreenType(
                             context: context,
-                            mobile: 45,
-                            tablet: 60,
+                            mobile: 60,
+                            tablet: 65,
                             desktop: 75,
                           ),
                         ),
                       ),
                       TextButton(
-                        onPressed: () {
-                          Navigator.pushReplacementNamed(context, '/');
-                        },
+                        onPressed: () {},
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: SvgPicture.asset(
                             'assets/images/jmun2024-title.svg',
                             height: getValueForScreenType(
                               context: context,
-                              mobile: 30,
+                              mobile: 40,
                               tablet: 45,
                               desktop: 50,
                             ),
@@ -88,10 +81,15 @@ class _FrontpageAppbarState extends State<FrontpageAppbar> {
                         children: [
                           TextButton(
                             onPressed: () {
-                              Navigator.pushNamed(context, '/about-us');
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const AdminPage(),
+                                ),
+                              );
                             },
                             child: Text(
-                              'About Us',
+                              'Daftar Peserta',
                               style: Theme.of(context).textTheme.titleMedium?.apply(
                                     color: Colors.white,
                                   ),
@@ -99,31 +97,19 @@ class _FrontpageAppbarState extends State<FrontpageAppbar> {
                           ),
                           TextButton(
                             onPressed: () {},
-                            child: Text(
-                              'Councils',
-                              style: Theme.of(context).textTheme.titleMedium?.apply(
-                                    color: Colors.white,
-                                  ),
-                            ),
-                          ),
-                          TextButton(
-                            onPressed: () {
-                              Navigator.pushNamed(context, '/registration');
-                            },
-                            child: Text(
-                              'Registration',
-                              style: Theme.of(context).textTheme.titleMedium?.apply(
-                                    color: Colors.white,
-                                  ),
-                            ),
-                          ),
-                          TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              'Press',
-                              style: Theme.of(context).textTheme.titleMedium?.apply(
-                                    color: Colors.white,
-                                  ),
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+                              decoration: BoxDecoration(
+                                color: Colors.redAccent,
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              child: const Text(
+                                'Logout',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ),
                           ),
                         ],
@@ -152,13 +138,15 @@ class _FrontpageAppbarState extends State<FrontpageAppbar> {
                       children: [
                         TextButton(
                           onPressed: () {
-                            setState(() {
-                              expand = false;
-                            });
-                            Navigator.pushNamed(context, '/about-us');
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const AdminPage(),
+                              ),
+                            );
                           },
                           child: Text(
-                            'About Us',
+                            'Daftar Peserta',
                             style: Theme.of(context).textTheme.titleMedium?.apply(
                                   color: Colors.white,
                                 ),
@@ -166,31 +154,19 @@ class _FrontpageAppbarState extends State<FrontpageAppbar> {
                         ),
                         TextButton(
                           onPressed: () {},
-                          child: Text(
-                            'Councils',
-                            style: Theme.of(context).textTheme.titleMedium?.apply(
-                                  color: Colors.white,
-                                ),
-                          ),
-                        ),
-                        TextButton(
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/registration');
-                          },
-                          child: Text(
-                            'Registration',
-                            style: Theme.of(context).textTheme.titleMedium?.apply(
-                                  color: Colors.white,
-                                ),
-                          ),
-                        ),
-                        TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            'Press',
-                            style: Theme.of(context).textTheme.titleMedium?.apply(
-                                  color: Colors.white,
-                                ),
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+                            decoration: BoxDecoration(
+                              color: Colors.redAccent,
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            child: const Text(
+                              'Logout',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ),
                         ),
                       ],
@@ -199,7 +175,7 @@ class _FrontpageAppbarState extends State<FrontpageAppbar> {
                     return Container();
                   }
                 },
-              )
+              ),
             ],
           ),
         ),
