@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class Section1 extends StatelessWidget {
@@ -32,6 +33,7 @@ class Section1 extends StatelessWidget {
                 ),
           ),
         ),
+        const SizedBox(height: 32.0),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -40,20 +42,33 @@ class Section1 extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "400+",
+                  "over",
                   style: getValueForScreenType(
                     context: context,
-                    mobile: Theme.of(context).textTheme.displaySmall?.apply(color: displayColor),
-                    tablet: Theme.of(context).textTheme.displayMedium?.apply(color: displayColor),
-                    desktop: Theme.of(context).textTheme.displayLarge?.apply(
-                          color: getValueForScreenType(
-                            context: context,
-                            mobile: displayColor,
-                            tablet: displayColor,
-                            desktop: const Color(0xfff3f5d8),
-                          ),
-                        ),
+                    mobile: Theme.of(context).textTheme.titleSmall?.apply(color: displayColor),
+                    tablet: Theme.of(context).textTheme.titleMedium?.apply(color: displayColor),
+                    desktop: Theme.of(context)
+                        .textTheme
+                        .titleMedium
+                        ?.apply(color: const Color(0xfff3f5d8)),
                   ),
+                ),
+                Text(
+                  "400+",
+                  style: getValueForScreenType(
+                      context: context,
+                      mobile: Theme.of(context).textTheme.displaySmall?.apply(color: displayColor),
+                      tablet: Theme.of(context).textTheme.displayMedium?.apply(color: displayColor),
+                      desktop: GoogleFonts.dmSerifText(
+                        fontSize: 72.0,
+                        height: 0.9,
+                        color: getValueForScreenType(
+                          context: context,
+                          mobile: displayColor,
+                          tablet: displayColor,
+                          desktop: const Color(0xfff3f5d8),
+                        ),
+                      )),
                 ),
                 Text(
                   "registrants",
@@ -69,21 +84,39 @@ class Section1 extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(width: 16.0),
+            const SizedBox(width: 32.0),
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Text(
+                  "from",
+                  style: getValueForScreenType(
+                    context: context,
+                    mobile: Theme.of(context).textTheme.titleSmall?.apply(color: displayColor),
+                    tablet: Theme.of(context).textTheme.titleMedium?.apply(color: displayColor),
+                    desktop: Theme.of(context)
+                        .textTheme
+                        .titleMedium
+                        ?.apply(color: const Color(0xfff3f5d8)),
+                  ),
+                ),
                 Text(
                   "18",
                   style: getValueForScreenType(
                     context: context,
                     mobile: Theme.of(context).textTheme.displaySmall?.apply(color: displayColor),
                     tablet: Theme.of(context).textTheme.displayMedium?.apply(color: displayColor),
-                    desktop: Theme.of(context)
-                        .textTheme
-                        .displayLarge
-                        ?.apply(color: const Color(0xfff3f5d8)),
+                    desktop: GoogleFonts.dmSerifText(
+                      fontSize: 72.0,
+                      height: 0.9,
+                      color: getValueForScreenType(
+                        context: context,
+                        mobile: displayColor,
+                        tablet: displayColor,
+                        desktop: const Color(0xfff3f5d8),
+                      ),
+                    ),
                   ),
                 ),
                 Text(
@@ -136,7 +169,16 @@ class Section1 extends StatelessWidget {
             Expanded(
               flex: 3,
               child: Padding(
-                padding: const EdgeInsets.all(32.0),
+                padding: getValueForScreenType(
+                  context: context,
+                  mobile: const EdgeInsets.all(32.0),
+                  tablet: const EdgeInsets.all(32.0),
+                  desktop: const EdgeInsets.only(
+                    top: 32.0,
+                    bottom: 32.0,
+                    left: 32.0,
+                  ),
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -275,7 +317,7 @@ class Section1 extends StatelessWidget {
                   var sz = sizing.deviceScreenType;
                   if (sz == DeviceScreenType.desktop) {
                     return Padding(
-                      padding: const EdgeInsets.all(32.0),
+                      padding: const EdgeInsets.only(top: 32.0, bottom: 32.0, right: 32.0),
                       child: stats,
                     );
                   } else {
