@@ -33,7 +33,7 @@ class Section2 extends StatelessWidget {
             desktop: textTheme.displayLarge,
           )?.apply(color: displayColor),
         ),
-        const SizedBox(height: 16.0),
+        const SizedBox(height: 32.0),
         ResponsiveBuilder(builder: (context, sizing) {
           var sz = sizing.deviceScreenType;
           if (sz == DeviceScreenType.mobile) {

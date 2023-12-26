@@ -43,8 +43,18 @@ class _PrevSpeakerCardState extends State<PrevSpeakerCard> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                '${widget.name}\n',
-                maxLines: 2,
+                getValueForScreenType(
+                  context: context,
+                  mobile: '${widget.name}\n\n',
+                  tablet: '${widget.name}\n',
+                  desktop: '${widget.name}\n',
+                ),
+                maxLines: getValueForScreenType(
+                  context: context,
+                  mobile: 3,
+                  tablet: 2,
+                  desktop: 2,
+                ),
                 textAlign: TextAlign.center,
                 style: getValueForScreenType(
                   context: context,
@@ -57,8 +67,13 @@ class _PrevSpeakerCardState extends State<PrevSpeakerCard> {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Text(
-                '${widget.desc}\n\n\n',
-                maxLines: 4,
+                getValueForScreenType(
+                  context: context,
+                  mobile: '${widget.desc}\n\n\n\n\n',
+                  tablet: '${widget.desc}\n\n\n\n',
+                  desktop: '${widget.desc}\n\n\n\n',
+                ),
+                maxLines: getValueForScreenType(context: context, mobile: 5, tablet: 4, desktop: 4),
                 textAlign: TextAlign.center,
                 style: getValueForScreenType(
                   context: context,

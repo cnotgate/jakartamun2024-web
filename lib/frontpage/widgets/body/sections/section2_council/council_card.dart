@@ -79,8 +79,3 @@ class _CouncilCardState extends State<CouncilCard> {
     );
   }
 }
-
-// class Councils {
-//   Councils(this.name, this.description);
-//   String name, description;
-// }
