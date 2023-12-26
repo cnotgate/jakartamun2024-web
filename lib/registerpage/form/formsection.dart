@@ -240,11 +240,14 @@ class _FormSectionState extends State<FormSection> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    'Council Preference',
-                    style: headerDisplay(context),
-                    textAlign: TextAlign.center,
-                  ),
+                  Expanded(
+                    child: Text(
+                      'Council Preference',
+                      style: headerDisplay(context),
+                      textAlign: TextAlign.center,
+                      softWrap: true,
+                    ),
+                  )
                 ],
               ),
               SizedBox(height: 10.0),
