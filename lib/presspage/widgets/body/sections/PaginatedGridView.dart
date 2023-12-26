@@ -62,23 +62,114 @@ class _MyGridViewState extends State<MyPaginatedGridView> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      controller.previousPage(
-                        duration: const Duration(milliseconds: 500),
-                        curve: Curves.easeInOut,
-                      );
-                    },
-                    child: const Text('Previous'),
+                  // ElevatedButton(
+                  //   onPressed: () {
+                  //     controller.previousPage(
+                  //       duration: const Duration(milliseconds: 500),
+                  //       curve: Curves.easeInOut,
+                  //     );
+                  //   },
+                  //   child: const Text('Previous'),
+                  // ),
+                  SizedBox(
+                    width: 200,
+                    height: 40,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        controller.previousPage(
+                          duration: const Duration(milliseconds: 500),
+                          curve: Curves.easeInOut,
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor:
+                            const Color(0xff6D261F), // Background color
+                        foregroundColor: Colors.white, // Text and icon color
+                        elevation: 5, // Shadow elevation
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.circular(30), // Rounded corners
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10), // Button padding
+                      ),
+                      child: Text(
+                        'Previous',
+                        style: getValueForScreenType(
+                          context: context,
+                          mobile: Theme.of(context)
+                              .textTheme
+                              .displaySmall
+                              ?.copyWith(
+                                  fontSize: 20, color: const Color(0xffF8F9E7)),
+                          tablet: Theme.of(context)
+                              .textTheme
+                              .displaySmall
+                              ?.copyWith(
+                                  fontSize: 20, color: const Color(0xffF8F9E7)),
+                          desktop: Theme.of(context)
+                              .textTheme
+                              .displaySmall
+                              ?.copyWith(
+                                  fontSize: 20, color: const Color(0xffF8F9E7)),
+                        ),
+                      ),
+                    ),
                   ),
-                  ElevatedButton(
-                    onPressed: () {
-                      controller.nextPage(
-                        duration: const Duration(milliseconds: 500),
-                        curve: Curves.easeInOut,
-                      );
-                    },
-                    child: const Text('Next'),
+                  const SizedBox(width: 10),
+                  // ElevatedButton(
+                  //   onPressed: () {
+                  //     controller.nextPage(
+                  //       duration: const Duration(milliseconds: 500),
+                  //       curve: Curves.easeInOut,
+                  //     );
+                  //   },
+                  //   child: const Text('Next'),
+                  // ),
+                  SizedBox(
+                    width: 200,
+                    height: 40,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        controller.nextPage(
+                          duration: const Duration(milliseconds: 500),
+                          curve: Curves.easeInOut,
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor:
+                            const Color(0xff6D261F), // Background color
+                        foregroundColor: Colors.white, // Text and icon color
+                        elevation: 5, // Shadow elevation
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.circular(30), // Rounded corners
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10), // Button padding
+                      ),
+                      child: Text(
+                        'Next',
+                        style: getValueForScreenType(
+                          context: context,
+                          mobile: Theme.of(context)
+                              .textTheme
+                              .displaySmall
+                              ?.copyWith(
+                                  fontSize: 20, color: const Color(0xffF8F9E7)),
+                          tablet: Theme.of(context)
+                              .textTheme
+                              .displaySmall
+                              ?.copyWith(
+                                  fontSize: 20, color: const Color(0xffF8F9E7)),
+                          desktop: Theme.of(context)
+                              .textTheme
+                              .displaySmall
+                              ?.copyWith(
+                                  fontSize: 20, color: const Color(0xffF8F9E7)),
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               )

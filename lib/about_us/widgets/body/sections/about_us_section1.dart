@@ -13,14 +13,56 @@ class AboutUsSection1 extends StatelessWidget {
     return Column(
       children: [
         Text(
-          "About Us",
-          style: textTheme.displayLarge?.apply(color: displayColor),
+          'About Us',
+          style: getValueForScreenType(
+            context: context,
+            mobile: Theme.of(context)
+                .textTheme
+                .displaySmall
+                ?.apply(color: Colors.white)
+                .copyWith(
+              shadows: [
+                Shadow(
+                  blurRadius: 3.0,
+                  color: Colors.black.withOpacity(0.5),
+                  offset: const Offset(2.0, 2.0),
+                ),
+              ],
+            ),
+            tablet: Theme.of(context)
+                .textTheme
+                .displaySmall
+                ?.apply(color: Colors.white)
+                .copyWith(
+              shadows: [
+                Shadow(
+                  blurRadius: 3.0,
+                  color: Colors.black.withOpacity(0.5),
+                  offset: const Offset(2.0, 2.0),
+                ),
+              ],
+            ),
+            desktop: Theme.of(context)
+                .textTheme
+                .displayLarge
+                ?.apply(color: Colors.white)
+                .copyWith(
+              shadows: [
+                Shadow(
+                  blurRadius: 3.0,
+                  color: Colors.black.withOpacity(0.5),
+                  offset: const Offset(2.0, 2.0),
+                ),
+              ],
+            ),
+          ),
         ),
         const SizedBox(height: 32.0),
         Card(
           color: cardColor,
           elevation: 5,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
           child: Container(
             width: MediaQuery.sizeOf(context).width *
                 getValueForScreenType(
@@ -63,7 +105,8 @@ class AboutUsSection1 extends StatelessWidget {
         Card(
           color: cardColor,
           elevation: 5,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
           child: Container(
             width: MediaQuery.sizeOf(context).width *
                 getValueForScreenType(
@@ -98,6 +141,52 @@ class AboutUsSection1 extends StatelessWidget {
                 ),
                 const SizedBox(height: 16.0),
                 const Placeholder(),
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(height: 32.0),
+        Text(
+          'Grand Theme',
+          style: getValueForScreenType(
+            context: context,
+            mobile: Theme.of(context)
+                .textTheme
+                .displaySmall
+                ?.apply(color: const Color(0xff6D261F))
+                .copyWith(
+              shadows: [
+                Shadow(
+                  blurRadius: 3.0,
+                  color: Colors.black.withOpacity(0.5),
+                  offset: const Offset(2.0, 2.0),
+                ),
+              ],
+            ),
+            tablet: Theme.of(context)
+                .textTheme
+                .displaySmall
+                ?.apply(color: const Color(0xff6D261F))
+                .copyWith(
+              shadows: [
+                Shadow(
+                  blurRadius: 3.0,
+                  color: Colors.black.withOpacity(0.5),
+                  offset: const Offset(2.0, 2.0),
+                ),
+              ],
+            ),
+            desktop: Theme.of(context)
+                .textTheme
+                .displayLarge
+                ?.apply(color: const Color(0xff6D261F))
+                .copyWith(
+              shadows: [
+                Shadow(
+                  blurRadius: 3.0,
+                  color: Colors.black.withOpacity(0.5),
+                  offset: const Offset(2.0, 2.0),
+                ),
               ],
             ),
           ),

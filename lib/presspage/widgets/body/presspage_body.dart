@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jakartamun_web/presspage/widgets/body/sections/presspagebody_section1.dart';
 import '../../../_global_widgets/body_background.dart';
 import '../../../_global_widgets/footer.dart';
+import '../../../frontpage/widgets/body/frontpage_body_background.dart';
 
 class PressPageBody extends StatelessWidget {
   PressPageBody({super.key});
@@ -16,7 +17,7 @@ class PressPageBody extends StatelessWidget {
           scrollDirection: Axis.vertical,
           child: const Stack(
             children: [
-              BodyBackground(),
+              FrontpageBodyBackground(),
               Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,

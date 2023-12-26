@@ -12,19 +12,56 @@ class Section4 extends StatelessWidget {
     return Column(
       children: [
         Text(
-          "Our Previous Partners",
+          'Our Previous Partners',
           style: getValueForScreenType(
             context: context,
-            mobile: textTheme.displaySmall,
-            tablet: textTheme.displayMedium,
-            desktop: textTheme.displayLarge,
-          )?.apply(color: displayColor),
+            mobile: Theme.of(context)
+                .textTheme
+                .displaySmall
+                ?.apply(color: displayColor)
+                .copyWith(
+              shadows: [
+                Shadow(
+                  blurRadius: 3.0,
+                  color: Colors.black.withOpacity(0.5),
+                  offset: const Offset(2.0, 2.0),
+                ),
+              ],
+            ),
+            tablet: Theme.of(context)
+                .textTheme
+                .displaySmall
+                ?.apply(color: displayColor)
+                .copyWith(
+              shadows: [
+                Shadow(
+                  blurRadius: 3.0,
+                  color: Colors.black.withOpacity(0.5),
+                  offset: const Offset(2.0, 2.0),
+                ),
+              ],
+            ),
+            desktop: Theme.of(context)
+                .textTheme
+                .displayLarge
+                ?.apply(color: displayColor)
+                .copyWith(
+              shadows: [
+                Shadow(
+                  blurRadius: 3.0,
+                  color: Colors.black.withOpacity(0.5),
+                  offset: const Offset(2.0, 2.0),
+                ),
+              ],
+            ),
+          ),
         ),
         const SizedBox(height: 32.0),
         Card(
           color: cardColor,
           elevation: 5,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
           child: Container(
             width: MediaQuery.sizeOf(context).width *
                 getValueForScreenType(
@@ -41,7 +78,8 @@ class Section4 extends StatelessWidget {
                   child: Material(
                     color: displayColor,
                     borderRadius: const BorderRadius.only(
-                        bottomLeft: Radius.circular(15.0), bottomRight: Radius.circular(15.0)),
+                        bottomLeft: Radius.circular(15.0),
+                        bottomRight: Radius.circular(15.0)),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
@@ -64,7 +102,8 @@ class Section4 extends StatelessWidget {
         Card(
           color: cardColor,
           elevation: 5,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
           child: Container(
             width: MediaQuery.sizeOf(context).width *
                 getValueForScreenType(
@@ -82,7 +121,8 @@ class Section4 extends StatelessWidget {
                   child: Material(
                     color: displayColor,
                     borderRadius: const BorderRadius.only(
-                        bottomLeft: Radius.circular(15.0), bottomRight: Radius.circular(15.0)),
+                        bottomLeft: Radius.circular(15.0),
+                        bottomRight: Radius.circular(15.0)),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(

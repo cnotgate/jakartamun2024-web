@@ -32,7 +32,8 @@ class Section3 extends StatelessWidget {
         width: double.infinity,
         fit: BoxFit.cover,
       ),
-      desc: 'Director of Economic Development and Environment at the Ministry of Foreign Affairs',
+      desc:
+          'Director of Economic Development and Environment at the Ministry of Foreign Affairs',
     ),
     PrevSpeakerCard(
       name: 'Heru Budi Hartono, S.E., M.M.',
@@ -59,7 +60,8 @@ class Section3 extends StatelessWidget {
         width: double.infinity,
         fit: BoxFit.cover,
       ),
-      desc: 'Permanent Representative of the Republic of Indonesia to UNESCO 2014-2019',
+      desc:
+          'Permanent Representative of the Republic of Indonesia to UNESCO 2014-2019',
     ),
   ];
 
@@ -69,13 +71,49 @@ class Section3 extends StatelessWidget {
     return Column(
       children: [
         Text(
-          "Previous Speakers",
+          'Previous Speakers',
           style: getValueForScreenType(
             context: context,
-            mobile: textTheme.displaySmall,
-            tablet: textTheme.displayMedium,
-            desktop: textTheme.displayLarge,
-          )?.apply(color: displayColor),
+            mobile: Theme.of(context)
+                .textTheme
+                .displaySmall
+                ?.apply(color: displayColor)
+                .copyWith(
+              shadows: [
+                Shadow(
+                  blurRadius: 3.0,
+                  color: Colors.black.withOpacity(0.5),
+                  offset: const Offset(2.0, 2.0),
+                ),
+              ],
+            ),
+            tablet: Theme.of(context)
+                .textTheme
+                .displaySmall
+                ?.apply(color: displayColor)
+                .copyWith(
+              shadows: [
+                Shadow(
+                  blurRadius: 3.0,
+                  color: Colors.black.withOpacity(0.5),
+                  offset: const Offset(2.0, 2.0),
+                ),
+              ],
+            ),
+            desktop: Theme.of(context)
+                .textTheme
+                .displayLarge
+                ?.apply(color: displayColor)
+                .copyWith(
+              shadows: [
+                Shadow(
+                  blurRadius: 3.0,
+                  color: Colors.black.withOpacity(0.5),
+                  offset: const Offset(2.0, 2.0),
+                ),
+              ],
+            ),
+          ),
         ),
         const SizedBox(height: 32.0),
         ResponsiveBuilder(builder: (context, sizing) {

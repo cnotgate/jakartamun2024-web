@@ -44,7 +44,9 @@ class _AdminPageAppbarState extends State<AdminPageAppbar> {
                   Row(
                     children: [
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacementNamed(context, '/');
+                        },
                         child: Image.asset(
                           'assets/images/jmun-logo.png',
                           isAntiAlias: true,
@@ -57,7 +59,9 @@ class _AdminPageAppbarState extends State<AdminPageAppbar> {
                         ),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacementNamed(context, '/');
+                        },
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: SvgPicture.asset(
@@ -90,7 +94,10 @@ class _AdminPageAppbarState extends State<AdminPageAppbar> {
                             },
                             child: Text(
                               'Daftar Peserta',
-                              style: Theme.of(context).textTheme.titleMedium?.apply(
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium
+                                  ?.apply(
                                     color: Colors.white,
                                   ),
                             ),
@@ -98,7 +105,8 @@ class _AdminPageAppbarState extends State<AdminPageAppbar> {
                           TextButton(
                             onPressed: () {},
                             child: Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 8.0, vertical: 4.0),
                               decoration: BoxDecoration(
                                 color: Colors.redAccent,
                                 borderRadius: BorderRadius.circular(10.0),
@@ -147,15 +155,17 @@ class _AdminPageAppbarState extends State<AdminPageAppbar> {
                           },
                           child: Text(
                             'Daftar Peserta',
-                            style: Theme.of(context).textTheme.titleMedium?.apply(
-                                  color: Colors.white,
-                                ),
+                            style:
+                                Theme.of(context).textTheme.titleMedium?.apply(
+                                      color: Colors.white,
+                                    ),
                           ),
                         ),
                         TextButton(
                           onPressed: () {},
                           child: Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 8.0, vertical: 4.0),
                             decoration: BoxDecoration(
                               color: Colors.redAccent,
                               borderRadius: BorderRadius.circular(10.0),
