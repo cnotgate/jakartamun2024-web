@@ -32,8 +32,7 @@ class Section3 extends StatelessWidget {
         width: double.infinity,
         fit: BoxFit.cover,
       ),
-      desc:
-          'Director of Economic Development and Environment at the Ministry of Foreign Affairs',
+      desc: 'Director of Economic Development and Environment at the Ministry of Foreign Affairs',
     ),
     PrevSpeakerCard(
       name: 'Heru Budi Hartono, S.E., M.M.',
@@ -60,25 +59,20 @@ class Section3 extends StatelessWidget {
         width: double.infinity,
         fit: BoxFit.cover,
       ),
-      desc:
-          'Permanent Representative of the Republic of Indonesia to UNESCO 2014-2019',
+      desc: 'Permanent Representative of the Republic of Indonesia to UNESCO 2014-2019',
     ),
   ];
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
+    // final textTheme = Theme.of(context).textTheme;
     return Column(
       children: [
         Text(
           'Previous Speakers',
           style: getValueForScreenType(
             context: context,
-            mobile: Theme.of(context)
-                .textTheme
-                .displaySmall
-                ?.apply(color: displayColor)
-                .copyWith(
+            mobile: Theme.of(context).textTheme.displaySmall?.apply(color: displayColor).copyWith(
               shadows: [
                 Shadow(
                   blurRadius: 3.0,
@@ -87,11 +81,7 @@ class Section3 extends StatelessWidget {
                 ),
               ],
             ),
-            tablet: Theme.of(context)
-                .textTheme
-                .displaySmall
-                ?.apply(color: displayColor)
-                .copyWith(
+            tablet: Theme.of(context).textTheme.displaySmall?.apply(color: displayColor).copyWith(
               shadows: [
                 Shadow(
                   blurRadius: 3.0,
@@ -100,11 +90,7 @@ class Section3 extends StatelessWidget {
                 ),
               ],
             ),
-            desktop: Theme.of(context)
-                .textTheme
-                .displayLarge
-                ?.apply(color: displayColor)
-                .copyWith(
+            desktop: Theme.of(context).textTheme.displayLarge?.apply(color: displayColor).copyWith(
               shadows: [
                 Shadow(
                   blurRadius: 3.0,

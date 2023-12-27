@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 /// Flutter code sample for [NestedScrollView].
 
+// ignore: missing_provider_scope
 void main() => runApp(const TablePageCombine());
 
 class TablePageCombine extends StatelessWidget {

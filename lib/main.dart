@@ -5,11 +5,7 @@ import 'package:jakartamun_web/about_us/about_us.dart';
 import 'package:jakartamun_web/adminpage/adminpage.dart';
 import 'package:jakartamun_web/frontpage/frontpage.dart';
 import 'package:jakartamun_web/presspage/presspage.dart';
-import 'package:jakartamun_web/presspage/widgets/body/presspage_body.dart';
-import 'package:jakartamun_web/presspage/widgets/body/sections/PaginatedGridView.dart';
-// import 'package:jakartamun_web/presspage/widgets/body/sections/testpageview.dart';
 import 'package:jakartamun_web/registerpage/registerpage.dart';
-import 'package:jakartamun_web/theme/color_schemes.g.dart';
 import 'package:jakartamun_web/theme/custom_color.g.dart';
 import 'package:jakartamun_web/theme/text_theme.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -49,7 +45,7 @@ class MyApp extends StatelessWidget {
         '/about-us': (context) => const AboutUs(),
         '/registration': (context) => const RegisterPage(),
         '/admin': (context) => const AdminPage(),
-        '/press': (context) => PressPage(),
+        '/press': (context) => const PressPage(),
       },
     );
   }

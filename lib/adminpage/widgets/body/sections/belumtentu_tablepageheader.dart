@@ -4,12 +4,12 @@ class TablePageHeader extends StatefulWidget {
   const TablePageHeader({super.key});
 
   @override
-  _TableState createState() => _TableState();
+  TableState createState() => TableState();
 }
 
-class _TableState extends State<TablePageHeader> {
+class TableState extends State<TablePageHeader> {
   late Future<List<Map<String, String>>> _dataFuture;
-  Map<String, String>? _selectedRow;
+  // Map<String, String>? _selectedRow;
 
   @override
   void initState() {
@@ -317,10 +317,10 @@ class _TableState extends State<TablePageHeader> {
         } else if (snapshot.hasError) {
           return Center(child: Text('Error: ${snapshot.error}'));
         } else {
-          List<Map<String, String>> data = snapshot.data!;
+          // List<Map<String, String>> data = snapshot.data!;
           return SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            child: Container(
+            child: SizedBox(
               width: 1200,
               child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,

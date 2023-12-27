@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -7,20 +5,20 @@ class PressPageBodyCard1 extends StatefulWidget {
   final String imageLink;
   final String title;
 
-  PressPageBodyCard1({Key? key, required this.imageLink, required this.title})
+  const PressPageBodyCard1({Key? key, required this.imageLink, required this.title})
       : super(key: key);
 
   @override
-  _PressPageBodyCard1State createState() => _PressPageBodyCard1State();
+  PressPageBodyCard1State createState() => PressPageBodyCard1State();
 }
 
-class _PressPageBodyCard1State extends State<PressPageBodyCard1> {
+class PressPageBodyCard1State extends State<PressPageBodyCard1> {
   final Color displayColor = const Color(0xffb23727);
 
-  late Future<Map<String, dynamic>> _data;
+  // late Future<Map<String, dynamic>> _data;
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
+    // final textTheme = Theme.of(context).textTheme;
     return Container(
       width: getValueForScreenType(
         context: context,
@@ -47,36 +45,28 @@ class _PressPageBodyCard1State extends State<PressPageBodyCard1> {
             Expanded(
                 flex: 1,
                 child: Image.network(
-                    'https://ichef.bbci.co.uk/news/800/cpsprodpb/bdfc/live/6fd5bc30-9a7a-11ee-ae24-71cd4a861931.jpg', fit: BoxFit.cover,)),
+                  'https://ichef.bbci.co.uk/news/800/cpsprodpb/bdfc/live/6fd5bc30-9a7a-11ee-ae24-71cd4a861931.jpg',
+                  fit: BoxFit.cover,
+                )),
             Expanded(
               flex: 2,
-              child:
-                  Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+              child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 2),
+                  padding: const EdgeInsets.only(left: 2),
                   child: SelectionArea(
-                    child: Container(
-                      height:  getValueForScreenType(
-                                        context: context,
-                                        mobile: 45,
-                                        tablet: 40,
-                                        desktop: 80),
+                    child: SizedBox(
+                      height: getValueForScreenType(
+                          context: context, mobile: 45, tablet: 40, desktop: 80),
                       child: Text(
                         'Perang Israel-Gaza: Harga perdamaian bagi Israel dan Palestina',
                         style: getValueForScreenType(
                           context: context,
-                          mobile: Theme.of(context)
-                              .textTheme
-                              .titleSmall
-                              ?.apply(color: displayColor),
-                          tablet: Theme.of(context)
-                              .textTheme
-                              .titleSmall
-                              ?.apply(color: displayColor),
-                          desktop: Theme.of(context)
-                              .textTheme
-                              .titleSmall
-                              ?.apply(color: displayColor),
+                          mobile:
+                              Theme.of(context).textTheme.titleSmall?.apply(color: displayColor),
+                          tablet:
+                              Theme.of(context).textTheme.titleSmall?.apply(color: displayColor),
+                          desktop:
+                              Theme.of(context).textTheme.titleSmall?.apply(color: displayColor),
                         ),
                       ),
                     ),

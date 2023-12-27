@@ -5,12 +5,12 @@ class TablePageContent extends StatefulWidget {
   const TablePageContent({super.key});
 
   @override
-  _TableState createState() => _TableState();
+  TableState createState() => TableState();
 }
 
-class _TableState extends State<TablePageContent> {
+class TableState extends State<TablePageContent> {
   late Future<List<Map<String, String>>> _dataFuture;
-  Map<String, String>? _selectedRow;
+  // Map<String, String>? _selectedRow;
 
   @override
   void initState() {
@@ -321,7 +321,7 @@ class _TableState extends State<TablePageContent> {
           List<Map<String, String>> data = snapshot.data!;
           return SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            child: Container(
+            child: SizedBox(
               width: 1200,
               child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,

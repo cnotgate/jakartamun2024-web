@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jakartamun_web/presspage/widgets/body/sections/presspagebody_section2.dart';
-import 'package:jakartamun_web/presspage/widgets/body/sections/PaginatedGridView.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-// import 'package:responsive_builder/responsive_builder.dart';
 
 class PressPageBodySection1 extends StatelessWidget {
   const PressPageBodySection1({super.key});
@@ -10,18 +8,14 @@ class PressPageBodySection1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
+    // final textTheme = Theme.of(context).textTheme;
     return Column(
       children: [
         Text(
           'Press Page',
           style: getValueForScreenType(
             context: context,
-            mobile: Theme.of(context)
-                .textTheme
-                .displaySmall
-                ?.apply(color: displayColor)
-                .copyWith(
+            mobile: Theme.of(context).textTheme.displaySmall?.apply(color: displayColor).copyWith(
               shadows: [
                 Shadow(
                   blurRadius: 3.0,
@@ -30,11 +24,7 @@ class PressPageBodySection1 extends StatelessWidget {
                 ),
               ],
             ),
-            tablet: Theme.of(context)
-                .textTheme
-                .displaySmall
-                ?.apply(color: displayColor)
-                .copyWith(
+            tablet: Theme.of(context).textTheme.displaySmall?.apply(color: displayColor).copyWith(
               shadows: [
                 Shadow(
                   blurRadius: 3.0,
@@ -43,11 +33,7 @@ class PressPageBodySection1 extends StatelessWidget {
                 ),
               ],
             ),
-            desktop: Theme.of(context)
-                .textTheme
-                .displayLarge
-                ?.apply(color: displayColor)
-                .copyWith(
+            desktop: Theme.of(context).textTheme.displayLarge?.apply(color: displayColor).copyWith(
               shadows: [
                 Shadow(
                   blurRadius: 3.0,
@@ -59,7 +45,7 @@ class PressPageBodySection1 extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 24.0),
-        PressPageBodySection2()
+        const PressPageBodySection2()
       ],
     );
   }

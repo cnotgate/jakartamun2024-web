@@ -3,11 +3,13 @@ import 'package:jakartamun_web/presspage/widgets/cards/press_card1.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class MyPaginatedGridView extends StatefulWidget {
+  const MyPaginatedGridView({super.key});
+
   @override
-  _MyGridViewState createState() => _MyGridViewState();
+  MyGridViewState createState() => MyGridViewState();
 }
 
-class _MyGridViewState extends State<MyPaginatedGridView> {
+class MyGridViewState extends State<MyPaginatedGridView> {
   Future<List<String>> fetchData() async {
     // Simulating asynchronous data fetching
     await Future.delayed(const Duration(seconds: 2));
@@ -19,8 +21,8 @@ class _MyGridViewState extends State<MyPaginatedGridView> {
   @override
   Widget build(BuildContext context) {
     final PageController controller = PageController();
-    int numberOfCards = getValueForScreenType(
-        context: context, mobile: 15, tablet: 28, desktop: 20);
+    int numberOfCards =
+        getValueForScreenType(context: context, mobile: 15, tablet: 28, desktop: 20);
     return FutureBuilder<List<String>>(
       future: fetchData(),
       builder: (context, snapshot) {
@@ -31,33 +33,30 @@ class _MyGridViewState extends State<MyPaginatedGridView> {
             children: [
               Expanded(
                 child: PageView.builder(
-                    controller: controller,
-                    itemCount: (fetchDataList.length / numberOfCards).ceil(),
-                    itemBuilder: ((context, x_axis) {
-                      return GridView.builder(
-                          gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: getValueForScreenType(
-                                      context: context,
-                                      mobile: 1,
-                                      tablet: 2,
-                                      desktop: 2),
-                                  childAspectRatio: 6,
-                                  crossAxisSpacing: 10,
-                                  mainAxisSpacing: 40),
-                          itemCount: numberOfCards,
-                          itemBuilder: ((context, y_axis) {
-                            if ((y_axis + 1) + (x_axis * numberOfCards) <=
-                                fetchDataList.length) {
-                              return PressPageBodyCard1(
-                                imageLink: '',
-                                title: '',
-                              );
-                            }
-                          }));
-
-                      ;
-                    })),
+                  controller: controller,
+                  itemCount: (fetchDataList.length / numberOfCards).ceil(),
+                  itemBuilder: ((context, xAxis) {
+                    return GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: getValueForScreenType(
+                              context: context, mobile: 1, tablet: 2, desktop: 2),
+                          childAspectRatio: 6,
+                          crossAxisSpacing: 10,
+                          mainAxisSpacing: 40),
+                      itemCount: numberOfCards,
+                      itemBuilder: ((context, yAxis) {
+                        if ((yAxis + 1) + (xAxis * numberOfCards) <= fetchDataList.length) {
+                          return const PressPageBodyCard1(
+                            imageLink: '',
+                            title: '',
+                          );
+                        } else {
+                          return Container();
+                        }
+                      }),
+                    );
+                  }),
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -82,13 +81,11 @@ class _MyGridViewState extends State<MyPaginatedGridView> {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor:
-                            const Color(0xff6D261F), // Background color
+                        backgroundColor: const Color(0xff6D261F), // Background color
                         foregroundColor: Colors.white, // Text and icon color
                         elevation: 5, // Shadow elevation
                         shape: RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.circular(30), // Rounded corners
+                          borderRadius: BorderRadius.circular(30), // Rounded corners
                         ),
                         padding: const EdgeInsets.symmetric(
                             horizontal: 20, vertical: 10), // Button padding
@@ -100,18 +97,15 @@ class _MyGridViewState extends State<MyPaginatedGridView> {
                           mobile: Theme.of(context)
                               .textTheme
                               .displaySmall
-                              ?.copyWith(
-                                  fontSize: 20, color: const Color(0xffF8F9E7)),
+                              ?.copyWith(fontSize: 20, color: const Color(0xffF8F9E7)),
                           tablet: Theme.of(context)
                               .textTheme
                               .displaySmall
-                              ?.copyWith(
-                                  fontSize: 20, color: const Color(0xffF8F9E7)),
+                              ?.copyWith(fontSize: 20, color: const Color(0xffF8F9E7)),
                           desktop: Theme.of(context)
                               .textTheme
                               .displaySmall
-                              ?.copyWith(
-                                  fontSize: 20, color: const Color(0xffF8F9E7)),
+                              ?.copyWith(fontSize: 20, color: const Color(0xffF8F9E7)),
                         ),
                       ),
                     ),
@@ -137,13 +131,11 @@ class _MyGridViewState extends State<MyPaginatedGridView> {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor:
-                            const Color(0xff6D261F), // Background color
+                        backgroundColor: const Color(0xff6D261F), // Background color
                         foregroundColor: Colors.white, // Text and icon color
                         elevation: 5, // Shadow elevation
                         shape: RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.circular(30), // Rounded corners
+                          borderRadius: BorderRadius.circular(30), // Rounded corners
                         ),
                         padding: const EdgeInsets.symmetric(
                             horizontal: 20, vertical: 10), // Button padding
@@ -155,18 +147,15 @@ class _MyGridViewState extends State<MyPaginatedGridView> {
                           mobile: Theme.of(context)
                               .textTheme
                               .displaySmall
-                              ?.copyWith(
-                                  fontSize: 20, color: const Color(0xffF8F9E7)),
+                              ?.copyWith(fontSize: 20, color: const Color(0xffF8F9E7)),
                           tablet: Theme.of(context)
                               .textTheme
                               .displaySmall
-                              ?.copyWith(
-                                  fontSize: 20, color: const Color(0xffF8F9E7)),
+                              ?.copyWith(fontSize: 20, color: const Color(0xffF8F9E7)),
                           desktop: Theme.of(context)
                               .textTheme
                               .displaySmall
-                              ?.copyWith(
-                                  fontSize: 20, color: const Color(0xffF8F9E7)),
+                              ?.copyWith(fontSize: 20, color: const Color(0xffF8F9E7)),
                         ),
                       ),
                     ),

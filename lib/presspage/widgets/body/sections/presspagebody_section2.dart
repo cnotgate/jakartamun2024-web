@@ -1,8 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:jakartamun_web/presspage/widgets/body/sections/PaginatedGridView.dart';
-import 'package:jakartamun_web/presspage/widgets/cards/press_card1.dart';
+import 'package:jakartamun_web/presspage/widgets/body/sections/paginated_view_grid.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class PressPageBodySection2 extends StatelessWidget {
@@ -12,7 +9,7 @@ class PressPageBodySection2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
+    // final textTheme = Theme.of(context).textTheme;
     return Container(
       width: getValueForScreenType(
         context: context,
@@ -36,24 +33,20 @@ class PressPageBodySection2 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            Expanded(
+            const Expanded(
               flex: 2,
               child: Padding(
-                padding: const EdgeInsets.all(32.0),
+                padding: EdgeInsets.all(32.0),
                 child: SelectionArea(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const SizedBox(height: 8.0),
-                      Container(
-                        height: 1500,
-                        child: Center(
-                          child: 
-                      MyPaginatedGridView(),
-                        )
-                        
-                        
-                      )
+                      SizedBox(height: 8.0),
+                      SizedBox(
+                          height: 1500,
+                          child: Center(
+                            child: MyPaginatedGridView(),
+                          ))
                     ],
                   ),
                 ),
@@ -64,8 +57,8 @@ class PressPageBodySection2 extends StatelessWidget {
                 var sz = size.deviceScreenType;
 
                 if (sz == DeviceScreenType.desktop) {
-                  return Padding(
-                    padding: const EdgeInsets.only(right: 8.0),
+                  return const Padding(
+                    padding: EdgeInsets.only(right: 8.0),
                     // child: Image.asset(
                     //   'assets/images/monas.png',
                     //   width: 300,

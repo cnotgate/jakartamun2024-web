@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:file_picker/file_picker.dart';
@@ -43,8 +44,7 @@ class _FormSectionState extends State<FormSection> {
           padding: MediaQuery.of(context).size.width < 600
               ? const EdgeInsets.all(20.0) // Smaller padding for mobile screens
               : const EdgeInsets.symmetric(
-                  horizontal: 70,
-                  vertical: 30), // Larger padding for larger screens
+                  horizontal: 70, vertical: 30), // Larger padding for larger screens
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -83,8 +83,7 @@ class _FormSectionState extends State<FormSection> {
                             Expanded(
                               child: buildNameField(context),
                             ),
-                            const SizedBox(
-                                width: 50.0), // Space between the fields
+                            const SizedBox(width: 50.0), // Space between the fields
                             // Container to hold the status field
                             Expanded(
                               child: buildEmailField(context),
@@ -104,8 +103,7 @@ class _FormSectionState extends State<FormSection> {
               TextFormField(
                 decoration: InputDecoration(
                   hintText: 'Nationality',
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15)),
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
                   filled: true,
                   fillColor: const Color(0x55F7ECE1),
                 ),
@@ -127,8 +125,7 @@ class _FormSectionState extends State<FormSection> {
               TextFormField(
                 decoration: InputDecoration(
                   hintText: 'Institute',
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15)),
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
                   filled: true,
                   fillColor: const Color(0x55F7ECE1),
                 ),
@@ -163,8 +160,7 @@ class _FormSectionState extends State<FormSection> {
                             Expanded(
                               child: buildAgeField(context),
                             ),
-                            const SizedBox(
-                                width: 50.0), // Space between the fields
+                            const SizedBox(width: 50.0), // Space between the fields
                             // Container to hold the status field
                             Expanded(
                               child: buildStatusField(context),
@@ -185,8 +181,8 @@ class _FormSectionState extends State<FormSection> {
                       style: headerDisplay(context),
                       textAlign: TextAlign.center,
                       softWrap: true, // Enable text wrapping
-                      overflow: TextOverflow
-                          .visible, // Ensure the text is visible even when wrapping
+                      overflow:
+                          TextOverflow.visible, // Ensure the text is visible even when wrapping
                     ),
                   ),
                 ],
@@ -201,8 +197,7 @@ class _FormSectionState extends State<FormSection> {
               TextFormField(
                 decoration: InputDecoration(
                   hintText: 'Contact Number',
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15)),
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
                   filled: true,
                   fillColor: const Color(0x55F7ECE1),
                 ),
@@ -224,8 +219,7 @@ class _FormSectionState extends State<FormSection> {
               TextFormField(
                 decoration: InputDecoration(
                   hintText: 'Line ID',
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15)),
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
                   filled: true,
                   fillColor: const Color(0x55F7ECE1),
                 ),
@@ -262,8 +256,7 @@ class _FormSectionState extends State<FormSection> {
                           children: [
                             buildCouncilField(context, 1, councilOne),
                             const SizedBox(height: 10.0),
-                            buildCouncilCountryField(
-                                context, 1, councilCountryOne),
+                            buildCouncilCountryField(context, 1, councilCountryOne),
                           ],
                         )
                       : Row(
@@ -273,12 +266,10 @@ class _FormSectionState extends State<FormSection> {
                             Expanded(
                               child: buildCouncilField(context, 1, councilOne),
                             ),
-                            const SizedBox(
-                                width: 50.0), // Space between the fields
+                            const SizedBox(width: 50.0), // Space between the fields
                             // Container to hold the status field
                             Expanded(
-                              child: buildCouncilCountryField(
-                                  context, 1, councilCountryOne),
+                              child: buildCouncilCountryField(context, 1, councilCountryOne),
                             ),
                           ],
                         );
@@ -297,8 +288,7 @@ class _FormSectionState extends State<FormSection> {
                           children: [
                             buildCouncilField(context, 2, councilTwo),
                             const SizedBox(height: 10.0),
-                            buildCouncilCountryField(
-                                context, 2, councilCountryTwo),
+                            buildCouncilCountryField(context, 2, councilCountryTwo),
                           ],
                         )
                       : Row(
@@ -308,12 +298,10 @@ class _FormSectionState extends State<FormSection> {
                             Expanded(
                               child: buildCouncilField(context, 2, councilTwo),
                             ),
-                            const SizedBox(
-                                width: 50.0), // Space between the fields
+                            const SizedBox(width: 50.0), // Space between the fields
                             // Container to hold the status field
                             Expanded(
-                              child: buildCouncilCountryField(
-                                  context, 2, councilCountryTwo),
+                              child: buildCouncilCountryField(context, 2, councilCountryTwo),
                             ),
                           ],
                         );
@@ -332,8 +320,7 @@ class _FormSectionState extends State<FormSection> {
                           children: [
                             buildCouncilField(context, 3, councilThree),
                             const SizedBox(height: 10.0),
-                            buildCouncilCountryField(
-                                context, 3, councilCountryThree),
+                            buildCouncilCountryField(context, 3, councilCountryThree),
                           ],
                         )
                       : Row(
@@ -341,15 +328,12 @@ class _FormSectionState extends State<FormSection> {
                           children: [
                             // Container to hold the age field
                             Expanded(
-                              child:
-                                  buildCouncilField(context, 3, councilThree),
+                              child: buildCouncilField(context, 3, councilThree),
                             ),
-                            const SizedBox(
-                                width: 50.0), // Space between the fields
+                            const SizedBox(width: 50.0), // Space between the fields
                             // Container to hold the status field
                             Expanded(
-                              child: buildCouncilCountryField(
-                                  context, 3, councilCountryThree),
+                              child: buildCouncilCountryField(context, 3, councilCountryThree),
                             ),
                           ],
                         );
@@ -366,8 +350,8 @@ class _FormSectionState extends State<FormSection> {
                       style: headerDisplay(context),
                       textAlign: TextAlign.center,
                       softWrap: true, // Enable text wrapping
-                      overflow: TextOverflow
-                          .visible, // Ensure the text is visible even when wrapping
+                      overflow:
+                          TextOverflow.visible, // Ensure the text is visible even when wrapping
                     ),
                   ),
                 ],
@@ -386,13 +370,11 @@ class _FormSectionState extends State<FormSection> {
                     decoration: InputDecoration(
                       hintText: 'Describe your previous experience in MUN',
                       suffixText: 'If none type "-"',
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15)),
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
                       filled: true,
                       fillColor: const Color(0x55F7ECE1),
                     ),
-                    maxLines:
-                        15, // Allows the text field to expand vertically as the user types
+                    maxLines: 15, // Allows the text field to expand vertically as the user types
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Please enter previous experience';
@@ -414,8 +396,7 @@ class _FormSectionState extends State<FormSection> {
                 decoration: InputDecoration(
                   hintText: 'If none type "-"',
                   // suffixText: 'If more than one, separate with commas',
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15)),
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
                   filled: true,
                   fillColor: const Color(0x55F7ECE1),
                 ),
@@ -438,8 +419,7 @@ class _FormSectionState extends State<FormSection> {
                 decoration: InputDecoration(
                   hintText: 'If none type "-"',
                   // suffixText: 'Separate with commas',
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15)),
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
                   filled: true,
                   fillColor: const Color(0x55F7ECE1),
                 ),
@@ -461,8 +441,7 @@ class _FormSectionState extends State<FormSection> {
               TextFormField(
                 decoration: InputDecoration(
                   hintText: 'Accomodation',
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15)),
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
                   filled: true,
                   fillColor: const Color(0x55F7ECE1),
                 ),
@@ -485,8 +464,8 @@ class _FormSectionState extends State<FormSection> {
                       style: headerDisplay(context),
                       textAlign: TextAlign.center,
                       softWrap: true, // Enable text wrapping
-                      overflow: TextOverflow
-                          .visible, // Ensure the text is visible even when wrapping
+                      overflow:
+                          TextOverflow.visible, // Ensure the text is visible even when wrapping
                     ),
                   ),
                 ],
@@ -514,7 +493,9 @@ class _FormSectionState extends State<FormSection> {
                       var picked = await FilePicker.platform.pickFiles();
 
                       if (picked != null) {
-                        print(picked.files);
+                        if (kDebugMode) {
+                          print(picked.files);
+                        }
                       }
                     },
                     icon: const Icon(Icons.file_upload),
@@ -524,8 +505,7 @@ class _FormSectionState extends State<FormSection> {
                       foregroundColor: Colors.white, // Text and icon color
                       elevation: 5, // Shadow elevation
                       shape: RoundedRectangleBorder(
-                        borderRadius:
-                            BorderRadius.circular(30), // Rounded corners
+                        borderRadius: BorderRadius.circular(30), // Rounded corners
                       ),
                       padding: const EdgeInsets.symmetric(
                           horizontal: 20, vertical: 15), // Button padding
@@ -549,13 +529,11 @@ class _FormSectionState extends State<FormSection> {
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
-                        backgroundColor:
-                            const Color(0xff6D261F), // Background color
+                        backgroundColor: const Color(0xff6D261F), // Background color
                         foregroundColor: Colors.white, // Text and icon color
                         elevation: 5, // Shadow elevation
                         shape: RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.circular(30), // Rounded corners
+                          borderRadius: BorderRadius.circular(30), // Rounded corners
                         ),
                         padding: const EdgeInsets.symmetric(
                             horizontal: 20, vertical: 10), // Button padding
@@ -567,18 +545,15 @@ class _FormSectionState extends State<FormSection> {
                           mobile: Theme.of(context)
                               .textTheme
                               .displaySmall
-                              ?.copyWith(
-                                  fontSize: 20, color: const Color(0xffF8F9E7)),
+                              ?.copyWith(fontSize: 20, color: const Color(0xffF8F9E7)),
                           tablet: Theme.of(context)
                               .textTheme
                               .displaySmall
-                              ?.copyWith(
-                                  fontSize: 20, color: const Color(0xffF8F9E7)),
+                              ?.copyWith(fontSize: 20, color: const Color(0xffF8F9E7)),
                           desktop: Theme.of(context)
                               .textTheme
                               .displaySmall
-                              ?.copyWith(
-                                  fontSize: 20, color: const Color(0xffF8F9E7)),
+                              ?.copyWith(fontSize: 20, color: const Color(0xffF8F9E7)),
                         ),
                       ),
                     ),
@@ -597,20 +572,16 @@ class _FormSectionState extends State<FormSection> {
       context: context,
       mobile: Theme.of(context).textTheme.bodyLarge?.apply(color: displayColor),
       tablet: Theme.of(context).textTheme.bodyLarge?.apply(color: displayColor),
-      desktop:
-          Theme.of(context).textTheme.bodyLarge?.apply(color: displayColor),
+      desktop: Theme.of(context).textTheme.bodyLarge?.apply(color: displayColor),
     );
   }
 
   TextStyle? headerDisplay(BuildContext context) {
     return getValueForScreenType(
       context: context,
-      mobile:
-          Theme.of(context).textTheme.displaySmall?.apply(color: displayColor),
-      tablet:
-          Theme.of(context).textTheme.displaySmall?.apply(color: displayColor),
-      desktop:
-          Theme.of(context).textTheme.displaySmall?.apply(color: displayColor),
+      mobile: Theme.of(context).textTheme.displaySmall?.apply(color: displayColor),
+      tablet: Theme.of(context).textTheme.displaySmall?.apply(color: displayColor),
+      desktop: Theme.of(context).textTheme.displaySmall?.apply(color: displayColor),
     );
   }
 
@@ -728,8 +699,7 @@ class _FormSectionState extends State<FormSection> {
     );
   }
 
-  Widget buildCouncilField(
-      BuildContext context, int councilNumber, String? council) {
+  Widget buildCouncilField(BuildContext context, int councilNumber, String? council) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -770,8 +740,7 @@ class _FormSectionState extends State<FormSection> {
     );
   }
 
-  Widget buildCouncilCountryField(
-      BuildContext context, int councilNumber, String? council) {
+  Widget buildCouncilCountryField(BuildContext context, int councilNumber, String? council) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

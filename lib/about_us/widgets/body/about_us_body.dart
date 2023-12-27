@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:jakartamun_web/about_us/widgets/body/sections/about_us_section1.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 import '../../../_global_widgets/footer.dart';
 import '../../../frontpage/widgets/body/frontpage_body_background.dart';
 

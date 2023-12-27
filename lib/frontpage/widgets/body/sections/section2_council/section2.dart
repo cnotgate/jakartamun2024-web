@@ -20,7 +20,7 @@ class Section2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
+    // final textTheme = Theme.of(context).textTheme;
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -28,11 +28,7 @@ class Section2 extends StatelessWidget {
           'Councils',
           style: getValueForScreenType(
             context: context,
-            mobile: Theme.of(context)
-                .textTheme
-                .displaySmall
-                ?.apply(color: displayColor)
-                .copyWith(
+            mobile: Theme.of(context).textTheme.displaySmall?.apply(color: displayColor).copyWith(
               shadows: [
                 Shadow(
                   blurRadius: 3.0,
@@ -41,11 +37,7 @@ class Section2 extends StatelessWidget {
                 ),
               ],
             ),
-            tablet: Theme.of(context)
-                .textTheme
-                .displaySmall
-                ?.apply(color: displayColor)
-                .copyWith(
+            tablet: Theme.of(context).textTheme.displaySmall?.apply(color: displayColor).copyWith(
               shadows: [
                 Shadow(
                   blurRadius: 3.0,
@@ -54,11 +46,7 @@ class Section2 extends StatelessWidget {
                 ),
               ],
             ),
-            desktop: Theme.of(context)
-                .textTheme
-                .displayLarge
-                ?.apply(color: displayColor)
-                .copyWith(
+            desktop: Theme.of(context).textTheme.displayLarge?.apply(color: displayColor).copyWith(
               shadows: [
                 Shadow(
                   blurRadius: 3.0,
@@ -75,26 +63,11 @@ class Section2 extends StatelessWidget {
           if (sz == DeviceScreenType.mobile) {
             return Column(
               children: [
-                Row(children: [
-                  CouncilCard(name: councils[0]),
-                  CouncilCard(name: councils[1])
-                ]),
-                Row(children: [
-                  CouncilCard(name: councils[2]),
-                  CouncilCard(name: councils[3])
-                ]),
-                Row(children: [
-                  CouncilCard(name: councils[4]),
-                  CouncilCard(name: councils[5])
-                ]),
-                Row(children: [
-                  CouncilCard(name: councils[6]),
-                  CouncilCard(name: councils[7])
-                ]),
-                Row(children: [
-                  CouncilCard(name: councils[8]),
-                  CouncilCard(name: councils[9])
-                ]),
+                Row(children: [CouncilCard(name: councils[0]), CouncilCard(name: councils[1])]),
+                Row(children: [CouncilCard(name: councils[2]), CouncilCard(name: councils[3])]),
+                Row(children: [CouncilCard(name: councils[4]), CouncilCard(name: councils[5])]),
+                Row(children: [CouncilCard(name: councils[6]), CouncilCard(name: councils[7])]),
+                Row(children: [CouncilCard(name: councils[8]), CouncilCard(name: councils[9])]),
               ],
             );
           } else {

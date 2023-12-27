@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:jakartamun_web/_global_widgets/footer.dart';
 import 'package:jakartamun_web/adminpage/widgets/body/sections/tablepage.dart';
@@ -21,9 +22,13 @@ class _AdminPageBodyState extends State<AdminPageBody> {
       if (scrollController.position.atEdge) {
         bool isTop = scrollController.position.pixels == 0;
         if (isTop) {
-          print('At the top');
+          if (kDebugMode) {
+            print('At the top');
+          }
         } else {
-          print('At the bottom');
+          if (kDebugMode) {
+            print('At the bottom');
+          }
         }
       }
     });
@@ -46,7 +51,7 @@ class _AdminPageBodyState extends State<AdminPageBody> {
                 tileMode: TileMode.clamp,
               ).createShader(bounds);
             },
-                  blendMode: BlendMode.dstOver,
+            blendMode: BlendMode.dstOver,
             child: Container(
               color: const Color(0xaaf06e34),
               constraints: BoxConstraints(minHeight: MediaQuery.of(context).size.height),
@@ -58,7 +63,11 @@ class _AdminPageBodyState extends State<AdminPageBody> {
                     Container(
                       height: 150,
                     ),
-                    const Text("Daftar Peserta", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold ),),
+                    const Text(
+                      "Daftar Peserta",
+                      style:
+                          TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
+                    ),
                     Container(
                       height: 50,
                     ),

@@ -15,18 +15,6 @@ class _AdminPageBodyState extends State<AdminPageBody> {
   @override
   void initState() {
     super.initState();
-
-    // Setup the listener.
-    scrollController.addListener(() {
-      if (scrollController.position.atEdge) {
-        bool isTop = scrollController.position.pixels == 0;
-        if (isTop) {
-          print('At the top');
-        } else {
-          print('At the bottom');
-        }
-      }
-    });
   }
 
   @override
@@ -50,8 +38,8 @@ class _AdminPageBodyState extends State<AdminPageBody> {
           child: Container(
             color: const Color(0xaaf06e34),
             constraints: BoxConstraints(minHeight: MediaQuery.of(context).size.height),
-            child: Padding(
-              padding: const EdgeInsets.all(10),
+            child: const Padding(
+              padding: EdgeInsets.all(10),
 
               child: TablePageCombine(),
               // child: Column(

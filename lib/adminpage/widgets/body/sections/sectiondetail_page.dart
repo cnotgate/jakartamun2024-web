@@ -1,18 +1,16 @@
 import 'dart:async';
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
 class SectionDetailPage extends StatefulWidget {
+  const SectionDetailPage({Key? key, required this.id}) : super(key: key);
   final String id;
 
-  SectionDetailPage({Key? key, required this.id}) : super(key: key);
-
   @override
-  _SectionDetailPageState createState() => _SectionDetailPageState();
+  SectionDetailPageState createState() => SectionDetailPageState();
 }
 
-class _SectionDetailPageState extends State<SectionDetailPage> {
+class SectionDetailPageState extends State<SectionDetailPage> {
   late Future<Map<String, dynamic>> _data;
 
   @override
